@@ -88,7 +88,7 @@
         End If
     End Sub
 
-    Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
+    Private Sub BtnEliminar_Click(sender As Object, e As EventArgs)
         Dim indice As Integer
         indice = DGVUsuarios.CurrentRow.Index
         Dim codigo As Integer = DGVUsuarios.Rows(indice).Cells(0).Value
@@ -100,7 +100,7 @@
         End If
     End Sub
 
-    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
+    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs)
         accion = 1
         GroupUsuario.Enabled = True
         TxtNombre.Clear()
@@ -110,7 +110,7 @@
         RdbVendedor.Checked = True
     End Sub
 
-    Private Sub DGVUsuarios_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DGVUsuarios.CellFormatting
+    Private Sub DGVUsuarios_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs)
         If e.ColumnIndex = 3 Then
             e.Value = New String("*"c, Convert.ToString(e.Value).Length)
         End If

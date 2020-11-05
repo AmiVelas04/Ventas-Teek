@@ -1,7 +1,7 @@
 ﻿
 Public Class cliente
     Dim funcion As New principal
-    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
+    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click 
         If DgvCli.RowCount >= 1 Then
             DgvCli.Rows.RemoveAt(0)
         End If
@@ -14,7 +14,7 @@ Public Class cliente
         DgvCli.DataSource = datos
     End Sub
 
-    Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
+    Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click 
         activar()
         Dim celda As Integer = DgvCli.RowCount
         If celda >= 1 Then
@@ -37,7 +37,7 @@ Public Class cliente
 
     End Sub
 
-    Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
+    Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click 
         limpiar()
         activar()
 
@@ -87,7 +87,7 @@ Public Class cliente
 
     End Sub
 
-    Private Sub BtnBorrar_Click(sender As Object, e As EventArgs) Handles BtnBorrar.Click
+    Private Sub BtnBorrar_Click(sender As Object, e As EventArgs) 
         If TxtNit.Text <> "" And TxtCod.Text <> "" Then
             Dim codigo As Integer = TxtCod.Text
             If funcion.existecli(codigo) Then

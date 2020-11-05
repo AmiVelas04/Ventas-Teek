@@ -25,6 +25,7 @@ Partial Class Ventas
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventas))
         Me.Panelsup = New System.Windows.Forms.Panel()
+        Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.LbUsu = New System.Windows.Forms.Label()
         Me.BtnCerrar = New System.Windows.Forms.Button()
         Me.panelLat = New System.Windows.Forms.Panel()
@@ -40,7 +41,6 @@ Partial Class Ventas
         Me.TmrMostrar = New System.Windows.Forms.Timer(Me.components)
         Me.TmrOcultar = New System.Windows.Forms.Timer(Me.components)
         Me.PanelCentral = New System.Windows.Forms.Panel()
-        Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.Panelsup.SuspendLayout()
         Me.panelLat.SuspendLayout()
         CType(Me.BotonMenu, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,8 +55,25 @@ Partial Class Ventas
         Me.Panelsup.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panelsup.Location = New System.Drawing.Point(0, 0)
         Me.Panelsup.Name = "Panelsup"
-        Me.Panelsup.Size = New System.Drawing.Size(944, 40)
+        Me.Panelsup.Size = New System.Drawing.Size(1024, 40)
         Me.Panelsup.TabIndex = 17
+        '
+        'BtnGuardar
+        '
+        Me.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnGuardar.FlatAppearance.BorderSize = 0
+        Me.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnGuardar.ForeColor = System.Drawing.Color.White
+        Me.BtnGuardar.Image = CType(resources.GetObject("BtnGuardar.Image"), System.Drawing.Image)
+        Me.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnGuardar.Location = New System.Drawing.Point(252, 0)
+        Me.BtnGuardar.Name = "BtnGuardar"
+        Me.BtnGuardar.Size = New System.Drawing.Size(149, 40)
+        Me.BtnGuardar.TabIndex = 2
+        Me.BtnGuardar.Text = "Respaldar"
+        Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnGuardar.UseVisualStyleBackColor = True
         '
         'LbUsu
         '
@@ -79,7 +96,7 @@ Partial Class Ventas
         Me.BtnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCerrar.Location = New System.Drawing.Point(908, 0)
+        Me.BtnCerrar.Location = New System.Drawing.Point(988, 0)
         Me.BtnCerrar.Name = "BtnCerrar"
         Me.BtnCerrar.Size = New System.Drawing.Size(36, 40)
         Me.BtnCerrar.TabIndex = 0
@@ -100,7 +117,7 @@ Partial Class Ventas
         Me.panelLat.Dock = System.Windows.Forms.DockStyle.Left
         Me.panelLat.Location = New System.Drawing.Point(0, 40)
         Me.panelLat.Name = "panelLat"
-        Me.panelLat.Size = New System.Drawing.Size(138, 480)
+        Me.panelLat.Size = New System.Drawing.Size(138, 728)
         Me.panelLat.TabIndex = 18
         '
         'BtnCaja
@@ -278,31 +295,14 @@ Partial Class Ventas
         Me.PanelCentral.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelCentral.Location = New System.Drawing.Point(138, 40)
         Me.PanelCentral.Name = "PanelCentral"
-        Me.PanelCentral.Size = New System.Drawing.Size(806, 480)
+        Me.PanelCentral.Size = New System.Drawing.Size(886, 728)
         Me.PanelCentral.TabIndex = 19
-        '
-        'BtnGuardar
-        '
-        Me.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnGuardar.FlatAppearance.BorderSize = 0
-        Me.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnGuardar.ForeColor = System.Drawing.Color.White
-        Me.BtnGuardar.Image = CType(resources.GetObject("BtnGuardar.Image"), System.Drawing.Image)
-        Me.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnGuardar.Location = New System.Drawing.Point(252, 0)
-        Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Size = New System.Drawing.Size(149, 40)
-        Me.BtnGuardar.TabIndex = 2
-        Me.BtnGuardar.Text = "Respaldar"
-        Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnGuardar.UseVisualStyleBackColor = True
         '
         'Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(944, 520)
+        Me.ClientSize = New System.Drawing.Size(1024, 768)
         Me.Controls.Add(Me.PanelCentral)
         Me.Controls.Add(Me.panelLat)
         Me.Controls.Add(Me.Panelsup)

@@ -173,9 +173,11 @@
 
 
 
-    Private Sub DGVprod_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DGVprod.CellFormatting
+    Private Sub DGVprod_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs)
         If DGVprod.Columns(e.ColumnIndex).Name = "" Then
 
         End If
     End Sub
+
+
 End Class

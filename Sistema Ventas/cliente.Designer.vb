@@ -25,9 +25,6 @@ Partial Class cliente
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.TxtNom = New System.Windows.Forms.TextBox()
-        Me.BtnBuscar = New System.Windows.Forms.Button()
-        Me.DgvCli = New System.Windows.Forms.DataGridView()
         Me.GbxDatos = New System.Windows.Forms.GroupBox()
         Me.TxtCod = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -42,78 +39,19 @@ Partial Class cliente
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtNomCli = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.PanInf = New System.Windows.Forms.Panel()
         Me.BtnBorrar = New System.Windows.Forms.Button()
         Me.BtnEditar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
-        CType(Me.DgvCli, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BtnBuscar = New System.Windows.Forms.Button()
+        Me.TxtNom = New System.Windows.Forms.TextBox()
+        Me.PanCentral = New System.Windows.Forms.Panel()
+        Me.DgvCli = New System.Windows.Forms.DataGridView()
         Me.GbxDatos.SuspendLayout()
-        Me.FlowLayoutPanel1.SuspendLayout()
+        Me.PanInf.SuspendLayout()
+        Me.PanCentral.SuspendLayout()
+        CType(Me.DgvCli, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'TxtNom
-        '
-        Me.TxtNom.Location = New System.Drawing.Point(12, 26)
-        Me.TxtNom.Name = "TxtNom"
-        Me.TxtNom.Size = New System.Drawing.Size(183, 20)
-        Me.TxtNom.TabIndex = 0
-        '
-        'BtnBuscar
-        '
-        Me.BtnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtnBuscar.FlatAppearance.BorderSize = 0
-        Me.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.BtnBuscar.Location = New System.Drawing.Point(201, 23)
-        Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnBuscar.TabIndex = 1
-        Me.BtnBuscar.Text = "Buscar"
-        Me.BtnBuscar.UseVisualStyleBackColor = False
-        '
-        'DgvCli
-        '
-        Me.DgvCli.AllowUserToAddRows = False
-        Me.DgvCli.AllowUserToDeleteRows = False
-        Me.DgvCli.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DgvCli.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(114, Byte), Integer))
-        Me.DgvCli.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical
-        Me.DgvCli.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
-        Me.DgvCli.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvCli.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DgvCli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DgvCli.EnableHeadersVisualStyles = False
-        Me.DgvCli.Location = New System.Drawing.Point(12, 59)
-        Me.DgvCli.Name = "DgvCli"
-        Me.DgvCli.ReadOnly = True
-        Me.DgvCli.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(114, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvCli.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.DgvCli.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(114, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSlateGray
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.DgvCli.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.DgvCli.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvCli.Size = New System.Drawing.Size(592, 352)
-        Me.DgvCli.TabIndex = 2
         '
         'GbxDatos
         '
@@ -133,9 +71,9 @@ Partial Class cliente
         Me.GbxDatos.Dock = System.Windows.Forms.DockStyle.Right
         Me.GbxDatos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GbxDatos.ForeColor = System.Drawing.Color.White
-        Me.GbxDatos.Location = New System.Drawing.Point(647, 0)
+        Me.GbxDatos.Location = New System.Drawing.Point(634, 0)
         Me.GbxDatos.Name = "GbxDatos"
-        Me.GbxDatos.Size = New System.Drawing.Size(252, 480)
+        Me.GbxDatos.Size = New System.Drawing.Size(252, 728)
         Me.GbxDatos.TabIndex = 3
         Me.GbxDatos.TabStop = False
         Me.GbxDatos.Text = "Cliente"
@@ -165,7 +103,7 @@ Partial Class cliente
         Me.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnGuardar.ForeColor = System.Drawing.Color.Black
-        Me.BtnGuardar.Location = New System.Drawing.Point(3, 454)
+        Me.BtnGuardar.Location = New System.Drawing.Point(3, 702)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(246, 23)
         Me.BtnGuardar.TabIndex = 10
@@ -257,81 +195,165 @@ Partial Class cliente
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nombre"
         '
-        'FlowLayoutPanel1
+        'PanInf
         '
-        Me.FlowLayoutPanel1.Controls.Add(Me.BtnBorrar)
-        Me.FlowLayoutPanel1.Controls.Add(Me.BtnEditar)
-        Me.FlowLayoutPanel1.Controls.Add(Me.BtnNuevo)
-        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 427)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(647, 53)
-        Me.FlowLayoutPanel1.TabIndex = 6
+        Me.PanInf.Controls.Add(Me.BtnBorrar)
+        Me.PanInf.Controls.Add(Me.BtnEditar)
+        Me.PanInf.Controls.Add(Me.BtnNuevo)
+        Me.PanInf.Controls.Add(Me.BtnBuscar)
+        Me.PanInf.Controls.Add(Me.TxtNom)
+        Me.PanInf.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.PanInf.Location = New System.Drawing.Point(0, 655)
+        Me.PanInf.Name = "PanInf"
+        Me.PanInf.Size = New System.Drawing.Size(634, 73)
+        Me.PanInf.TabIndex = 7
         '
         'BtnBorrar
         '
+        Me.BtnBorrar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnBorrar.BackColor = System.Drawing.Color.Red
         Me.BtnBorrar.FlatAppearance.BorderSize = 0
         Me.BtnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnBorrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBorrar.Location = New System.Drawing.Point(3, 3)
+        Me.BtnBorrar.Location = New System.Drawing.Point(4, 18)
         Me.BtnBorrar.Name = "BtnBorrar"
         Me.BtnBorrar.Size = New System.Drawing.Size(75, 43)
-        Me.BtnBorrar.TabIndex = 7
+        Me.BtnBorrar.TabIndex = 12
         Me.BtnBorrar.Text = "Borrar"
         Me.BtnBorrar.UseVisualStyleBackColor = False
         '
         'BtnEditar
         '
+        Me.BtnEditar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnEditar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnEditar.FlatAppearance.BorderSize = 0
         Me.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEditar.Location = New System.Drawing.Point(84, 3)
+        Me.BtnEditar.Location = New System.Drawing.Point(85, 18)
         Me.BtnEditar.Name = "BtnEditar"
         Me.BtnEditar.Size = New System.Drawing.Size(75, 43)
-        Me.BtnEditar.TabIndex = 6
+        Me.BtnEditar.TabIndex = 11
         Me.BtnEditar.Text = "Editar"
         Me.BtnEditar.UseVisualStyleBackColor = False
         '
         'BtnNuevo
         '
+        Me.BtnNuevo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnNuevo.BackColor = System.Drawing.Color.Teal
         Me.BtnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnNuevo.Location = New System.Drawing.Point(165, 3)
+        Me.BtnNuevo.Location = New System.Drawing.Point(166, 18)
         Me.BtnNuevo.Name = "BtnNuevo"
         Me.BtnNuevo.Size = New System.Drawing.Size(82, 43)
-        Me.BtnNuevo.TabIndex = 8
+        Me.BtnNuevo.TabIndex = 13
         Me.BtnNuevo.Text = "Nuevo"
         Me.BtnNuevo.UseVisualStyleBackColor = False
+        '
+        'BtnBuscar
+        '
+        Me.BtnBuscar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtnBuscar.FlatAppearance.BorderSize = 0
+        Me.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BtnBuscar.Location = New System.Drawing.Point(351, 32)
+        Me.BtnBuscar.Name = "BtnBuscar"
+        Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnBuscar.TabIndex = 15
+        Me.BtnBuscar.Text = "Buscar"
+        Me.BtnBuscar.UseVisualStyleBackColor = False
+        '
+        'TxtNom
+        '
+        Me.TxtNom.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtNom.Location = New System.Drawing.Point(432, 32)
+        Me.TxtNom.Name = "TxtNom"
+        Me.TxtNom.Size = New System.Drawing.Size(183, 20)
+        Me.TxtNom.TabIndex = 14
+        '
+        'PanCentral
+        '
+        Me.PanCentral.Controls.Add(Me.DgvCli)
+        Me.PanCentral.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanCentral.Location = New System.Drawing.Point(0, 0)
+        Me.PanCentral.Name = "PanCentral"
+        Me.PanCentral.Size = New System.Drawing.Size(634, 655)
+        Me.PanCentral.TabIndex = 8
+        '
+        'DgvCli
+        '
+        Me.DgvCli.AllowUserToAddRows = False
+        Me.DgvCli.AllowUserToDeleteRows = False
+        Me.DgvCli.AllowUserToResizeColumns = False
+        Me.DgvCli.AllowUserToResizeRows = False
+        Me.DgvCli.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DgvCli.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DgvCli.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(114, Byte), Integer))
+        Me.DgvCli.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical
+        Me.DgvCli.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
+        Me.DgvCli.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvCli.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DgvCli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.DgvCli.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DgvCli.EnableHeadersVisualStyles = False
+        Me.DgvCli.Location = New System.Drawing.Point(0, 0)
+        Me.DgvCli.Name = "DgvCli"
+        Me.DgvCli.ReadOnly = True
+        Me.DgvCli.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(114, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvCli.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DgvCli.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(114, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSlateGray
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.DgvCli.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.DgvCli.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvCli.Size = New System.Drawing.Size(634, 655)
+        Me.DgvCli.TabIndex = 3
         '
         'cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(114, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(899, 480)
-        Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.ClientSize = New System.Drawing.Size(886, 728)
+        Me.Controls.Add(Me.PanCentral)
+        Me.Controls.Add(Me.PanInf)
         Me.Controls.Add(Me.GbxDatos)
-        Me.Controls.Add(Me.DgvCli)
-        Me.Controls.Add(Me.BtnBuscar)
-        Me.Controls.Add(Me.TxtNom)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "cliente"
         Me.Text = "cliente"
-        CType(Me.DgvCli, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbxDatos.ResumeLayout(False)
         Me.GbxDatos.PerformLayout()
-        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.PanInf.ResumeLayout(False)
+        Me.PanInf.PerformLayout()
+        Me.PanCentral.ResumeLayout(False)
+        CType(Me.DgvCli, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents TxtNom As TextBox
-    Friend WithEvents BtnBuscar As Button
-    Friend WithEvents DgvCli As DataGridView
     Friend WithEvents GbxDatos As GroupBox
     Friend WithEvents TxtSald As TextBox
     Friend WithEvents Label5 As Label
@@ -344,10 +366,14 @@ Partial Class cliente
     Friend WithEvents TxtNomCli As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents BtnGuardar As Button
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents TxtCod As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents PanInf As Panel
     Friend WithEvents BtnBorrar As Button
     Friend WithEvents BtnEditar As Button
     Friend WithEvents BtnNuevo As Button
-    Friend WithEvents TxtCod As TextBox
-    Friend WithEvents Label6 As Label
+    Friend WithEvents BtnBuscar As Button
+    Friend WithEvents TxtNom As TextBox
+    Friend WithEvents PanCentral As Panel
+    Friend WithEvents DgvCli As DataGridView
 End Class

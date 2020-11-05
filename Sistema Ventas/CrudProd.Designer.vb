@@ -26,9 +26,6 @@ Partial Class CrudProd
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.DGVprod = New System.Windows.Forms.DataGridView()
-        Me.TxtNombre = New System.Windows.Forms.TextBox()
-        Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.Grupo1 = New System.Windows.Forms.GroupBox()
         Me.BtnSubImagen = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
@@ -53,88 +50,16 @@ Partial Class CrudProd
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.BtnNuevo = New System.Windows.Forms.Button()
+        Me.BtnBuscar = New System.Windows.Forms.Button()
+        Me.TxtNombre = New System.Windows.Forms.TextBox()
         Me.OFD1 = New System.Windows.Forms.OpenFileDialog()
-        CType(Me.DGVprod, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanCentr = New System.Windows.Forms.Panel()
+        Me.DGVprod = New System.Windows.Forms.DataGridView()
         Me.Grupo1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
+        Me.PanCentr.SuspendLayout()
+        CType(Me.DGVprod, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'DGVprod
-        '
-        Me.DGVprod.AllowUserToAddRows = False
-        Me.DGVprod.AllowUserToDeleteRows = False
-        Me.DGVprod.AllowUserToResizeColumns = False
-        Me.DGVprod.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(114, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSlateGray
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        Me.DGVprod.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.DGVprod.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DGVprod.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(114, Byte), Integer))
-        Me.DGVprod.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical
-        Me.DGVprod.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
-        Me.DGVprod.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVprod.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.DGVprod.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DGVprod.EnableHeadersVisualStyles = False
-        Me.DGVprod.GridColor = System.Drawing.Color.DarkRed
-        Me.DGVprod.Location = New System.Drawing.Point(12, 43)
-        Me.DGVprod.MultiSelect = False
-        Me.DGVprod.Name = "DGVprod"
-        Me.DGVprod.ReadOnly = True
-        Me.DGVprod.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(114, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVprod.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.DGVprod.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(114, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSlateGray
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-        Me.DGVprod.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.DGVprod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVprod.Size = New System.Drawing.Size(533, 256)
-        Me.DGVprod.TabIndex = 0
-        '
-        'TxtNombre
-        '
-        Me.TxtNombre.Location = New System.Drawing.Point(12, 13)
-        Me.TxtNombre.Name = "TxtNombre"
-        Me.TxtNombre.Size = New System.Drawing.Size(193, 20)
-        Me.TxtNombre.TabIndex = 1
-        '
-        'BtnBuscar
-        '
-        Me.BtnBuscar.BackColor = System.Drawing.Color.Green
-        Me.BtnBuscar.FlatAppearance.BorderSize = 0
-        Me.BtnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow
-        Me.BtnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
-        Me.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBuscar.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.BtnBuscar.Location = New System.Drawing.Point(223, 12)
-        Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(75, 24)
-        Me.BtnBuscar.TabIndex = 2
-        Me.BtnBuscar.Text = "Buscar"
-        Me.BtnBuscar.UseVisualStyleBackColor = False
         '
         'Grupo1
         '
@@ -160,9 +85,9 @@ Partial Class CrudProd
         Me.Grupo1.Dock = System.Windows.Forms.DockStyle.Right
         Me.Grupo1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Grupo1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Grupo1.Location = New System.Drawing.Point(551, 0)
+        Me.Grupo1.Location = New System.Drawing.Point(618, 0)
         Me.Grupo1.Name = "Grupo1"
-        Me.Grupo1.Size = New System.Drawing.Size(268, 480)
+        Me.Grupo1.Size = New System.Drawing.Size(268, 728)
         Me.Grupo1.TabIndex = 3
         Me.Grupo1.TabStop = False
         Me.Grupo1.Text = "Datos del producto"
@@ -186,7 +111,7 @@ Partial Class CrudProd
         Me.BtnGuardar.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.BtnGuardar.FlatAppearance.BorderSize = 0
         Me.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnGuardar.Location = New System.Drawing.Point(3, 454)
+        Me.BtnGuardar.Location = New System.Drawing.Point(3, 702)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(262, 23)
         Me.BtnGuardar.TabIndex = 18
@@ -364,10 +289,12 @@ Partial Class CrudProd
         Me.FlowLayoutPanel1.Controls.Add(Me.BtnEditar)
         Me.FlowLayoutPanel1.Controls.Add(Me.BtnEliminar)
         Me.FlowLayoutPanel1.Controls.Add(Me.BtnNuevo)
+        Me.FlowLayoutPanel1.Controls.Add(Me.BtnBuscar)
+        Me.FlowLayoutPanel1.Controls.Add(Me.TxtNombre)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 431)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 679)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(551, 49)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(618, 49)
         Me.FlowLayoutPanel1.TabIndex = 6
         '
         'BtnNuevo
@@ -385,36 +312,119 @@ Partial Class CrudProd
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
+        'BtnBuscar
+        '
+        Me.BtnBuscar.BackColor = System.Drawing.Color.Green
+        Me.BtnBuscar.FlatAppearance.BorderSize = 0
+        Me.BtnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow
+        Me.BtnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black
+        Me.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnBuscar.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.BtnBuscar.Location = New System.Drawing.Point(324, 3)
+        Me.BtnBuscar.Name = "BtnBuscar"
+        Me.BtnBuscar.Size = New System.Drawing.Size(75, 24)
+        Me.BtnBuscar.TabIndex = 8
+        Me.BtnBuscar.Text = "Buscar"
+        Me.BtnBuscar.UseVisualStyleBackColor = False
+        '
+        'TxtNombre
+        '
+        Me.TxtNombre.Location = New System.Drawing.Point(405, 3)
+        Me.TxtNombre.Name = "TxtNombre"
+        Me.TxtNombre.Size = New System.Drawing.Size(193, 20)
+        Me.TxtNombre.TabIndex = 7
+        '
         'OFD1
         '
         Me.OFD1.FileName = "OpenFileDialog1"
+        '
+        'PanCentr
+        '
+        Me.PanCentr.Controls.Add(Me.DGVprod)
+        Me.PanCentr.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanCentr.Location = New System.Drawing.Point(0, 0)
+        Me.PanCentr.Name = "PanCentr"
+        Me.PanCentr.Size = New System.Drawing.Size(618, 679)
+        Me.PanCentr.TabIndex = 7
+        '
+        'DGVprod
+        '
+        Me.DGVprod.AllowUserToAddRows = False
+        Me.DGVprod.AllowUserToDeleteRows = False
+        Me.DGVprod.AllowUserToResizeColumns = False
+        Me.DGVprod.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(114, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSlateGray
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        Me.DGVprod.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DGVprod.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DGVprod.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DGVprod.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(114, Byte), Integer))
+        Me.DGVprod.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical
+        Me.DGVprod.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
+        Me.DGVprod.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVprod.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DGVprod.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.DGVprod.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DGVprod.EnableHeadersVisualStyles = False
+        Me.DGVprod.GridColor = System.Drawing.Color.DarkRed
+        Me.DGVprod.Location = New System.Drawing.Point(0, 0)
+        Me.DGVprod.MultiSelect = False
+        Me.DGVprod.Name = "DGVprod"
+        Me.DGVprod.ReadOnly = True
+        Me.DGVprod.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(114, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVprod.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.DGVprod.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(114, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSlateGray
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
+        Me.DGVprod.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.DGVprod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGVprod.Size = New System.Drawing.Size(618, 679)
+        Me.DGVprod.TabIndex = 1
         '
         'CrudProd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(114, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(819, 480)
+        Me.ClientSize = New System.Drawing.Size(886, 728)
+        Me.Controls.Add(Me.PanCentr)
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.Grupo1)
-        Me.Controls.Add(Me.BtnBuscar)
-        Me.Controls.Add(Me.TxtNombre)
-        Me.Controls.Add(Me.DGVprod)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "CrudProd"
         Me.Text = "CrudProd"
-        CType(Me.DGVprod, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Grupo1.ResumeLayout(False)
         Me.Grupo1.PerformLayout()
         Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.FlowLayoutPanel1.PerformLayout()
+        Me.PanCentr.ResumeLayout(False)
+        CType(Me.DGVprod, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents DGVprod As DataGridView
-    Friend WithEvents TxtNombre As TextBox
-    Friend WithEvents BtnBuscar As Button
     Friend WithEvents Grupo1 As GroupBox
     Friend WithEvents BtnEditar As Button
     Friend WithEvents BtnEliminar As Button
@@ -440,4 +450,8 @@ Partial Class CrudProd
     Friend WithEvents BtnNuevo As Button
     Friend WithEvents BtnSubImagen As Button
     Friend WithEvents OFD1 As OpenFileDialog
+    Friend WithEvents BtnBuscar As Button
+    Friend WithEvents TxtNombre As TextBox
+    Friend WithEvents PanCentr As Panel
+    Friend WithEvents DGVprod As DataGridView
 End Class

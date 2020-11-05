@@ -4,18 +4,14 @@ Imports MySql.Data.MySqlClient
 
 Public Class principal
     Dim bita As New Bitacora
+    Dim conec As New Conexion
 
-
-    Dim servidor As String = "localhost"
-    Dim bd As String = "prod"
-    Dim user As String = "creditos"
-    Dim pass As String = "Cre-2020-Sis"
-    Dim cadenaconn As String = "server=" & servidor & ";" & "database=" & bd & ";" & "user id=" & user & ";" & "password=" & pass
-    Dim conn As New MySqlConnection(cadenaconn)
     'busqueda general
     Protected Sub buscar(ByVal consulta As String, ByRef tabla As DataTable)
+        conec.iniciar()
         Try
-            Dim adap As New MySqlDataAdapter(consulta, conn)
+            Dim adap As New MySqlDataAdapter(consulta, conec.conn)
+
             tabla.Dispose()
             adap.Fill(tabla)
             adap.Dispose()
@@ -27,16 +23,15 @@ Public Class principal
     End Sub
     Protected Sub Consulgeneral(ByVal consulta As String)
         Dim com As New MySqlCommand
-
-        com.Connection = conn
+        com.Connection = conec.conn
         com.CommandText = consulta
         com.CommandType = CommandType.Text
         Try
-            conn.Open()
+            conec.conn.Open()
             com.ExecuteNonQuery()
-            conn.Close()
+            conec.conn.Close()
         Catch ex As Exception
-            conn.Close()
+            conec.conn.Close()
             MessageBox.Show("Error de consulta general: " & Chr(13) & ex.ToString)
         End Try
     End Sub
@@ -71,7 +66,7 @@ Public Class principal
         Dim prod As New DataTable
         Dim consulta As String
         consulta = "select cod_cli as Codigo,Nombre, Direccion, Nit, Credito, Saldo from cliente where nombre like '%" & nom & "%'"
-        conn = New MySqlConnection(cadenaconn)
+        '  conn = New MySqlConnection(cadenaconn)
         buscar(consulta, prod)
         Return prod
     End Function
@@ -82,7 +77,7 @@ Public Class principal
         Dim consulta As String
         consulta = "select * from cliente where cod_cli='" & nit & "'"
 
-        Dim adap As New MySqlDataAdapter(consulta, conn)
+        Dim adap As New MySqlDataAdapter(consulta, conec.conn)
         adap.Fill(datos)
         If datos.Rows.Count >= 1 Then
             Return True
@@ -96,7 +91,7 @@ Public Class principal
         Dim consulta As String
         consulta = "select cod_cli from cliente where Nombre='" & nom & "'"
         If datos.Rows.Count >= 1 Then
-            Dim adap As New MySqlDataAdapter(consulta, conn)
+            Dim adap As New MySqlDataAdapter(consulta, conec.conn)
             adap.Fill(datos)
             Dim codigo As String
             codigo = datos.Rows(0)(0).ToString
@@ -114,7 +109,7 @@ Public Class principal
         Dim consulta As String
         consulta = "select * from cliente"
 
-        Dim adap As New MySqlDataAdapter(consulta, conn)
+        Dim adap As New MySqlDataAdapter(consulta, conec.conn)
         adap.Fill(datos)
         Dim total As Integer
         total = datos.Rows.Count
@@ -134,13 +129,13 @@ Public Class principal
         Dim codigo As Integer
         codigo = conteocli() + 1
         consulta = "insert into cliente (cod_cli, nombre, direccion, nit,credito,saldo) values ('" & codigo & "','" & datos(0) & "','" & datos(1) & "','" & datos(2) & "'," & datos(3) & "," & datos(4) & ")"
-        comando.Connection = conn
+        comando.Connection = conec.conn
         comando.CommandText = consulta
         comando.CommandType = CommandType.Text
         Try
-            conn.Open()
+            conec.conn.Open()
             comando.ExecuteNonQuery()
-            conn.Close()
+            conec.conn.Close()
             MessageBox.Show("Datos almacenados correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             Dim bita As New Bitacora
             Dim accion As String
@@ -148,7 +143,7 @@ Public Class principal
             bita.bitacora(Nombre, accion)
 
         Catch ex As Exception
-            conn.Close()
+            conec.conn.Close()
 
             MessageBox.Show("No se pudo ingresar el cliente", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Dim accion As String
@@ -162,13 +157,13 @@ Public Class principal
         Dim consulta As String
         Dim comando As New MySqlCommand
         consulta = "delete from cliente where cod_cli='" & nit & "'"
-        comando.Connection = conn
+        comando.Connection = conec.conn
         comando.CommandText = consulta
         comando.CommandType = CommandType.Text
         Try
-            conn.Open()
+            conec.conn.Open()
             comando.ExecuteNonQuery()
-            conn.Close()
+            conec.conn.Close()
             MessageBox.Show("Datos eliminados correctamente", "Cliente eliminado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 
             Dim accion As String
@@ -176,7 +171,7 @@ Public Class principal
             bita.bitacora(Nombre, accion)
 
         Catch ex As Exception
-            conn.Close()
+            conec.conn.Close()
             MessageBox.Show("No se pudo Eliminar el cliente, consulte con su administrador", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
             Dim accion As String
@@ -192,20 +187,20 @@ Public Class principal
         Dim consulta As String
         Dim comando As New MySqlCommand
         consulta = "update cliente set nombre='" & datos(0) & "',direccion='" & datos(1) & "', nit='" & datos(2) & "', credito=" & datos(3) & ",saldo=" & datos(4) & " where cod_cli='" & datos(5) & "'"
-        comando.Connection = conn
+        comando.Connection = conec.conn
         comando.CommandText = consulta
         comando.CommandType = CommandType.Text
         Try
-            conn.Open()
+            conec.conn.Open()
             comando.ExecuteNonQuery()
-            conn.Close()
+            conec.conn.Close()
             MessageBox.Show("Datos actualizados correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 
             Dim accion As String
             accion = "Se actualizaron los datos del cliente: " & datos(0) & "con codigo: " & datos(5) & Chr(13) & "Con los siguientes vaores, Direccion: " & datos(1) & Chr(13) & "Credito: " & datos(3) & Chr(13) & "saldo: " & datos(4)
             bita.bitacora(Nombre, accion)
         Catch ex As Exception
-            conn.Close()
+            conec.conn.Close()
 
             MessageBox.Show("No se pudo actualizar el cliente", "Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Dim accion As String
@@ -245,8 +240,8 @@ Public Class principal
     Public Function buscarpt(ByVal nom As String)
         Dim prod As New DataTable
         Dim consulta As String
-        consulta = "select Codigo_p as Codigo,Nombre,Descripcion,Marca,Cantidad, Preciov as Venta,Precioc as Costo, Ganacia,Imagen from producto where nombre like '%" & nom & "%'"
-        conn = New MySqlConnection(cadenaconn)
+        consulta = "select Codigo_p as Codigo,Nombre,Descripcion,Marca,Cantidad,Precioc as Costo, Preciov as Venta, Ganacia,Imagen from producto where nombre like '%" & nom & "%'"
+        ' conn = New MySqlConnection(cadenaconn)
         buscar(consulta, prod)
         Return prod
     End Function
@@ -256,7 +251,7 @@ Public Class principal
         Dim consulta As String
         consulta = "select * from producto where codigo_p='" & cod & "'"
 
-        Dim adap As New MySqlDataAdapter(consulta, conn)
+        Dim adap As New MySqlDataAdapter(consulta, conec.conn)
         adap.Fill(datos)
         If datos.Rows.Count >= 1 Then
             Return True
@@ -274,17 +269,17 @@ Public Class principal
         Dim comando As New MySqlCommand
         consulta = "update producto set nombre='" & datos(1) & "',descripcion='" & datos(2) & "',marca='" & datos(3) & "', cantidad=" & datos(4) & ",precioc=" & datos(5) & ",preciov=" & datos(6) & ",ganacia=" & datos(7) & ",imagen='" & datos(8) & "' where codigo_p='" & datos(0) & "'"
 
-        comando.Connection = conn
+        comando.Connection = conec.conn
         comando.CommandText = consulta
         comando.CommandType = CommandType.Text
         Try
-            conn.Open()
+            conec.conn.Open()
             comando.ExecuteNonQuery()
-            conn.Close()
+            conec.conn.Close()
             MessageBox.Show("Datos actualizados correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 
         Catch ex As Exception
-            conn.Close()
+            conec.conn.Close()
             MessageBox.Show(ex.ToString)
             '  MessageBox.Show(consulta)
 
@@ -297,19 +292,19 @@ Public Class principal
         Dim consulta As String
         Dim comando As New MySqlCommand
         consulta = "insert into producto (codigo_p, nombre, descripcion, marca,cantidad,precioc,preciov,ganacia,imagen) values ('" & datos(0) & "','" & datos(1) & "','" & datos(2) & "','" & datos(3) & "'," & datos(4) & "," & datos(5) & "," & datos(6) & "," & datos(7) & ",'" & datos(8) & "')"
-        comando.Connection = conn
+        comando.Connection = conec.conn
         comando.CommandText = consulta
         comando.CommandType = CommandType.Text
         Try
-            conn.Open()
+            conec.conn.Open()
             comando.ExecuteNonQuery()
-            conn.Close()
+            conec.conn.Close()
             MessageBox.Show("Datos almacenados correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             Dim accion As String
             accion = "Nuevo usuario registrado: " & Chr(13) & " de nombre: " & datos(1)
             bita.bitacora(Nombre, accion)
         Catch ex As Exception
-            conn.Close()
+            conec.conn.Close()
             MessageBox.Show("No se pudo agregar el Producto", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Dim accion As String
             accion = "No se guardo producto: " & Chr(13) & " de nombre: " & datos(1) & Chr(13) & "Error: " & ex.ToString
@@ -324,19 +319,19 @@ Public Class principal
         Dim consulta As String
         Dim comando As New MySqlCommand
         consulta = "delete from producto where codigo_p='" & cod & "'"
-        comando.Connection = conn
+        comando.Connection = conec.conn
         comando.CommandText = consulta
         comando.CommandType = CommandType.Text
         Try
-            conn.Open()
+            conec.conn.Open()
             comando.ExecuteNonQuery()
-            conn.Close()
+            conec.conn.Close()
             MessageBox.Show("Datos eliminados correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             Dim accion As String
             accion = "producto eliminado correctamente" & Chr(13) & " de codigo: " & cod
             bita.bitacora(Nombre, accion)
         Catch ex As Exception
-            conn.Close()
+            conec.conn.Close()
             Dim accion As String
             accion = "producto no se elimino" & Chr(13) & " de codigo: " & cod & Chr(13) & "Error: " & ex.ToString
             bita.bitacora(Nombre, accion)
@@ -398,18 +393,18 @@ Public Class principal
     'Registra una nueva venta
     Private Function ingresoventa(ByVal consulta As String) As Boolean
         Dim comando As New MySqlCommand
-        comando.Connection = conn
+        comando.Connection = conec.conn
         comando.CommandText = consulta
         comando.CommandType = CommandType.Text
         Try
-            conn.Open()
+            conec.conn.Open()
             comando.ExecuteNonQuery()
-            conn.Close()
+            conec.conn.Close()
             '  MessageBox.Show("Venta general Hecha", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             Return True
         Catch ex As Exception
 
-            conn.Close()
+            conec.conn.Close()
             MessageBox.Show(consulta)
             MessageBox.Show(ex.ToString)
             Dim accion As String
@@ -444,17 +439,17 @@ Public Class principal
 
             codigo += 1
 
-            comando.Connection = conn
+            comando.Connection = conec.conn
             comando.CommandText = consulta
             comando.CommandType = CommandType.Text
             Try
-                conn.Open()
+                conec.conn.Open()
                 comando.ExecuteNonQuery()
-                conn.Close()
+                conec.conn.Close()
 
 
             Catch ex As Exception
-                conn.Close()
+                conec.conn.Close()
                 MessageBox.Show(consulta)
                 MessageBox.Show(ex.ToString)
 
@@ -494,12 +489,12 @@ Public Class principal
         consulta = "delete from venta where comprobante=" & compro
         Dim com As New MySqlCommand
         com.CommandText = consulta
-        com.Connection = conn
+        com.Connection = conec.conn
         com.CommandType = CommandType.Text
         Try
-            conn.Open()
+            conec.conn.Open()
             com.ExecuteNonQuery()
-            conn.Close()
+            conec.conn.Close()
 
 
         Catch ex As Exception
@@ -514,12 +509,12 @@ Public Class principal
         consulta = "delete from ventadetalle where comprobante=" & compro
         Dim com As New MySqlCommand
         com.CommandText = consulta
-        com.Connection = conn
+        com.Connection = conec.conn
         com.CommandType = CommandType.Text
         Try
-            conn.Open()
+            conec.conn.Open()
             com.ExecuteNonQuery()
-            conn.Close()
+            conec.conn.Close()
 
 
         Catch ex As Exception
