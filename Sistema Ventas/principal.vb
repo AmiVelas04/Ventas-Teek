@@ -16,8 +16,8 @@ Public Class principal
             adap.Fill(tabla)
             adap.Dispose()
         Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            MessageBox.Show(consulta)
+            ' MessageBox.Show(ex.ToString)
+            ' MessageBox.Show(consulta)
         End Try
 
     End Sub
@@ -39,10 +39,10 @@ Public Class principal
 
 #Region "Clientes"
     'busca el cliente y devuele los datos en un datatable
-    Friend Function buscli(ByVal nit As String)
+    Friend Function buscli(ByVal cod As String)
         Dim datos As New DataTable
         Dim consulta As String
-        consulta = "Select cod_cli,nombre, direccion, credito, saldo from cliente where nit='" & nit & "'"
+        consulta = "Select cod_cli,nombre, direccion, credito, saldo from cliente where cod_cli='" & cod & "'"
         buscar(consulta, datos)
         If datos.Rows.Count >= 1 Then
             Return datos
@@ -219,7 +219,6 @@ Public Class principal
         Dim consulta As String
         consulta = "select codigo_p,nombre,descripcion,marca,preciov,cantidad,imagen from producto where codigo_p='" & codigo & "'"
         buscar(consulta, prod)
-
         Return prod
     End Function
     Public Function costo(ByVal cod As String) As Decimal
@@ -250,9 +249,9 @@ Public Class principal
         Dim datos As New DataTable
         Dim consulta As String
         consulta = "select * from producto where codigo_p='" & cod & "'"
+        buscar(consulta, datos)
 
-        Dim adap As New MySqlDataAdapter(consulta, conec.conn)
-        adap.Fill(datos)
+
         If datos.Rows.Count >= 1 Then
             Return True
 
@@ -372,8 +371,6 @@ Public Class principal
                     credito(numcompro, datos(0), VariablesUNI.cod, anti, total)
                 End If
                 MessageBox.Show("Venta realizada con exito", "Venta hecha", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-
 
             Else
                 borrarventadet(numcompro)
@@ -549,10 +546,10 @@ Public Class principal
             encabezado.Detalle.Add(producto)
         Next
 
-        Dim fact As New Factura()
+        Dim fact As New Ticket
         fact.encabezado.Add(encabezado)
         fact.Detalle = encabezado.Detalle
-        fact.factura = datos(0)
+        'fact.factura = datos(0)
         fact.Show()
 
 

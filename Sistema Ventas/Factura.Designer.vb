@@ -25,12 +25,20 @@ Partial Class Factura
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.DetFactBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EncFactBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         CType(Me.DetFactBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EncFactBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'DetFactBindingSource
+        '
+        Me.DetFactBindingSource.DataMember = "DetFact"
+        '
+        'EncFactBindingSource
+        '
+        Me.EncFactBindingSource.DataMember = "EncFact"
         '
         'ReportViewer1
         '
@@ -44,22 +52,14 @@ Partial Class Factura
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "Sistema_Ventas.Factura.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(284, 261)
+        Me.ReportViewer1.Size = New System.Drawing.Size(801, 312)
         Me.ReportViewer1.TabIndex = 0
-        '
-        'DetFactBindingSource
-        '
-        Me.DetFactBindingSource.DataMember = "DetFact"
-        '
-        'EncFactBindingSource
-        '
-        Me.EncFactBindingSource.DataMember = "EncFact"
         '
         'Factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 261)
+        Me.ClientSize = New System.Drawing.Size(801, 312)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "Factura"
         Me.Text = "Factura"

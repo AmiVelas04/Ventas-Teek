@@ -179,5 +179,14 @@
         End If
     End Sub
 
-
+    Private Sub TxtPorcent_TextChanged(sender As Object, e As EventArgs) Handles TxtPorcent.TextChanged
+        If (IsNumeric(TxtPorcent.Text)) Then
+            If (IsNumeric(TxtPrecioc.Text)) Then
+                Dim venta As Decimal
+                venta = Decimal.Parse(TxtPrecioc.Text) * Decimal.Parse(TxtPorcent.Text) / 100
+                TxtPrecioV.Text = Decimal.Parse(TxtPrecioc.Text) + venta
+                TxtGan.Text = Decimal.Parse(TxtPrecioV.Text) - Decimal.Parse(TxtPrecioc.Text)
+            End If
+        End If
+    End Sub
 End Class

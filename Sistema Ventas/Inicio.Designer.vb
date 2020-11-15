@@ -74,7 +74,6 @@ Partial Class Inicio
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 13
         Me.PictureBox1.TabStop = False
-        Me.PictureBox1.Visible = False
         '
         'BtnIngresar
         '

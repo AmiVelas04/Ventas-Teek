@@ -22,20 +22,29 @@ Partial Class Productos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Productos))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Productos))
+        Me.PanSup = New System.Windows.Forms.Panel()
+        Me.TxtAntic = New System.Windows.Forms.TextBox()
+        Me.LblAntic = New System.Windows.Forms.Label()
+        Me.RdbCredito = New System.Windows.Forms.RadioButton()
+        Me.RdbContado = New System.Windows.Forms.RadioButton()
+        Me.LblTotal = New System.Windows.Forms.Label()
         Me.BtnBorrar = New System.Windows.Forms.Button()
         Me.BtnLimpiar = New System.Windows.Forms.Button()
+        Me.BtnCobrar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.CboCliente = New System.Windows.Forms.ComboBox()
         Me.BtnBuscarCli = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TxtNit = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.LblCredito = New System.Windows.Forms.Label()
         Me.LblDir = New System.Windows.Forms.Label()
         Me.LblNombre = New System.Windows.Forms.Label()
-        Me.TxtNit = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.PanBot = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TxtPrecio = New System.Windows.Forms.TextBox()
         Me.TxtMarc = New System.Windows.Forms.TextBox()
@@ -49,6 +58,7 @@ Partial Class Productos
         Me.ImgProd = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtCod = New System.Windows.Forms.TextBox()
+        Me.PanCent = New System.Windows.Forms.Panel()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
         Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -59,18 +69,90 @@ Partial Class Productos
         Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Imagen = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Disponible = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LblTotal = New System.Windows.Forms.Label()
-        Me.RdbContado = New System.Windows.Forms.RadioButton()
-        Me.RdbCredito = New System.Windows.Forms.RadioButton()
-        Me.LblAntic = New System.Windows.Forms.Label()
-        Me.TxtAntic = New System.Windows.Forms.TextBox()
-        Me.BtnCobrar = New System.Windows.Forms.Button()
+        Me.PanSup.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.PanBot.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ImgProd, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanCent.SuspendLayout()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'PanSup
+        '
+        Me.PanSup.Controls.Add(Me.TxtAntic)
+        Me.PanSup.Controls.Add(Me.LblAntic)
+        Me.PanSup.Controls.Add(Me.RdbCredito)
+        Me.PanSup.Controls.Add(Me.RdbContado)
+        Me.PanSup.Controls.Add(Me.LblTotal)
+        Me.PanSup.Controls.Add(Me.BtnBorrar)
+        Me.PanSup.Controls.Add(Me.BtnLimpiar)
+        Me.PanSup.Controls.Add(Me.BtnCobrar)
+        Me.PanSup.Controls.Add(Me.GroupBox2)
+        Me.PanSup.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanSup.Location = New System.Drawing.Point(0, 0)
+        Me.PanSup.Name = "PanSup"
+        Me.PanSup.Size = New System.Drawing.Size(886, 175)
+        Me.PanSup.TabIndex = 25
+        '
+        'TxtAntic
+        '
+        Me.TxtAntic.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtAntic.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.TxtAntic.Location = New System.Drawing.Point(280, 48)
+        Me.TxtAntic.Name = "TxtAntic"
+        Me.TxtAntic.Size = New System.Drawing.Size(130, 22)
+        Me.TxtAntic.TabIndex = 42
+        '
+        'LblAntic
+        '
+        Me.LblAntic.AutoSize = True
+        Me.LblAntic.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblAntic.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.LblAntic.Location = New System.Drawing.Point(277, 22)
+        Me.LblAntic.Name = "LblAntic"
+        Me.LblAntic.Size = New System.Drawing.Size(65, 16)
+        Me.LblAntic.TabIndex = 41
+        Me.LblAntic.Text = "Anticipo"
+        '
+        'RdbCredito
+        '
+        Me.RdbCredito.AutoSize = True
+        Me.RdbCredito.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RdbCredito.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.RdbCredito.Location = New System.Drawing.Point(185, 48)
+        Me.RdbCredito.Name = "RdbCredito"
+        Me.RdbCredito.Size = New System.Drawing.Size(78, 20)
+        Me.RdbCredito.TabIndex = 40
+        Me.RdbCredito.Text = "Credito"
+        Me.RdbCredito.UseVisualStyleBackColor = True
+        '
+        'RdbContado
+        '
+        Me.RdbContado.AutoSize = True
+        Me.RdbContado.Checked = True
+        Me.RdbContado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RdbContado.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.RdbContado.Location = New System.Drawing.Point(185, 22)
+        Me.RdbContado.Name = "RdbContado"
+        Me.RdbContado.Size = New System.Drawing.Size(86, 20)
+        Me.RdbContado.TabIndex = 39
+        Me.RdbContado.TabStop = True
+        Me.RdbContado.Text = "Contado"
+        Me.RdbContado.UseVisualStyleBackColor = True
+        '
+        'LblTotal
+        '
+        Me.LblTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.LblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblTotal.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.LblTotal.Location = New System.Drawing.Point(88, 89)
+        Me.LblTotal.Name = "LblTotal"
+        Me.LblTotal.Size = New System.Drawing.Size(337, 54)
+        Me.LblTotal.TabIndex = 38
+        Me.LblTotal.Text = "Total:Q."
+        Me.LblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'BtnBorrar
         '
@@ -78,10 +160,10 @@ Partial Class Productos
         Me.BtnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnBorrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnBorrar.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.BtnBorrar.Location = New System.Drawing.Point(84, 1)
+        Me.BtnBorrar.Location = New System.Drawing.Point(84, 7)
         Me.BtnBorrar.Name = "BtnBorrar"
         Me.BtnBorrar.Size = New System.Drawing.Size(83, 63)
-        Me.BtnBorrar.TabIndex = 28
+        Me.BtnBorrar.TabIndex = 37
         Me.BtnBorrar.Text = "Borrar"
         Me.BtnBorrar.UseVisualStyleBackColor = False
         '
@@ -91,66 +173,113 @@ Partial Class Productos
         Me.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnLimpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnLimpiar.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.BtnLimpiar.Location = New System.Drawing.Point(0, 1)
+        Me.BtnLimpiar.Location = New System.Drawing.Point(0, 7)
         Me.BtnLimpiar.Name = "BtnLimpiar"
         Me.BtnLimpiar.Size = New System.Drawing.Size(83, 63)
-        Me.BtnLimpiar.TabIndex = 27
+        Me.BtnLimpiar.TabIndex = 36
         Me.BtnLimpiar.Text = "Limpiar"
         Me.BtnLimpiar.UseVisualStyleBackColor = False
         '
+        'BtnCobrar
+        '
+        Me.BtnCobrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BtnCobrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BtnCobrar.FlatAppearance.BorderSize = 0
+        Me.BtnCobrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow
+        Me.BtnCobrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.BtnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCobrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCobrar.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BtnCobrar.Image = CType(resources.GetObject("BtnCobrar.Image"), System.Drawing.Image)
+        Me.BtnCobrar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnCobrar.Location = New System.Drawing.Point(0, 69)
+        Me.BtnCobrar.Name = "BtnCobrar"
+        Me.BtnCobrar.Size = New System.Drawing.Size(86, 60)
+        Me.BtnCobrar.TabIndex = 35
+        Me.BtnCobrar.Text = "Cobrar"
+        Me.BtnCobrar.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnCobrar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.BtnCobrar.UseVisualStyleBackColor = False
+        '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.BtnBuscarCli)
-        Me.GroupBox2.Controls.Add(Me.Panel1)
-        Me.GroupBox2.Controls.Add(Me.TxtNit)
-        Me.GroupBox2.Controls.Add(Me.Label7)
+        Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.Panel2)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.GroupBox2.Location = New System.Drawing.Point(450, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(431, 3)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(449, 129)
-        Me.GroupBox2.TabIndex = 25
+        Me.GroupBox2.Size = New System.Drawing.Size(455, 166)
+        Me.GroupBox2.TabIndex = 34
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Cliente"
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.CboCliente)
+        Me.Panel2.Controls.Add(Me.BtnBuscarCli)
+        Me.Panel2.Controls.Add(Me.TxtNit)
+        Me.Panel2.Controls.Add(Me.Label7)
+        Me.Panel2.Controls.Add(Me.LblCredito)
+        Me.Panel2.Controls.Add(Me.LblDir)
+        Me.Panel2.Controls.Add(Me.LblNombre)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(3, 18)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(449, 145)
+        Me.Panel2.TabIndex = 2
+        '
+        'CboCliente
+        '
+        Me.CboCliente.FormattingEnabled = True
+        Me.CboCliente.Location = New System.Drawing.Point(13, 30)
+        Me.CboCliente.Name = "CboCliente"
+        Me.CboCliente.Size = New System.Drawing.Size(229, 24)
+        Me.CboCliente.TabIndex = 7
         '
         'BtnBuscarCli
         '
         Me.BtnBuscarCli.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.BtnBuscarCli.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnBuscarCli.ForeColor = System.Drawing.Color.White
-        Me.BtnBuscarCli.Location = New System.Drawing.Point(281, 16)
+        Me.BtnBuscarCli.Location = New System.Drawing.Point(365, 91)
         Me.BtnBuscarCli.Name = "BtnBuscarCli"
         Me.BtnBuscarCli.Size = New System.Drawing.Size(75, 31)
-        Me.BtnBuscarCli.TabIndex = 3
+        Me.BtnBuscarCli.TabIndex = 6
         Me.BtnBuscarCli.Text = "Buscar"
         Me.BtnBuscarCli.UseVisualStyleBackColor = False
         '
-        'Panel1
+        'TxtNit
         '
-        Me.Panel1.Controls.Add(Me.LblCredito)
-        Me.Panel1.Controls.Add(Me.LblDir)
-        Me.Panel1.Controls.Add(Me.LblNombre)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(3, 65)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(443, 61)
-        Me.Panel1.TabIndex = 2
+        Me.TxtNit.Location = New System.Drawing.Point(13, 87)
+        Me.TxtNit.Name = "TxtNit"
+        Me.TxtNit.Size = New System.Drawing.Size(187, 22)
+        Me.TxtNit.TabIndex = 5
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(14, 68)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(28, 16)
+        Me.Label7.TabIndex = 4
+        Me.Label7.Text = "Nit"
         '
         'LblCredito
         '
         Me.LblCredito.AutoSize = True
-        Me.LblCredito.Location = New System.Drawing.Point(221, 6)
+        Me.LblCredito.Location = New System.Drawing.Point(236, 90)
         Me.LblCredito.Name = "LblCredito"
-        Me.LblCredito.Size = New System.Drawing.Size(66, 16)
+        Me.LblCredito.Size = New System.Drawing.Size(70, 16)
         Me.LblCredito.TabIndex = 2
         Me.LblCredito.Text = "Credito: "
         '
         'LblDir
         '
         Me.LblDir.AutoSize = True
-        Me.LblDir.Location = New System.Drawing.Point(14, 37)
+        Me.LblDir.Location = New System.Drawing.Point(270, 33)
         Me.LblDir.Name = "LblDir"
-        Me.LblDir.Size = New System.Drawing.Size(78, 16)
+        Me.LblDir.Size = New System.Drawing.Size(80, 16)
         Me.LblDir.TabIndex = 1
         Me.LblDir.Text = "Dirección:"
         '
@@ -159,25 +288,18 @@ Partial Class Productos
         Me.LblNombre.AutoSize = True
         Me.LblNombre.Location = New System.Drawing.Point(14, 6)
         Me.LblNombre.Name = "LblNombre"
-        Me.LblNombre.Size = New System.Drawing.Size(67, 16)
+        Me.LblNombre.Size = New System.Drawing.Size(69, 16)
         Me.LblNombre.TabIndex = 0
         Me.LblNombre.Text = "Nombre:"
         '
-        'TxtNit
+        'PanBot
         '
-        Me.TxtNit.Location = New System.Drawing.Point(52, 25)
-        Me.TxtNit.Name = "TxtNit"
-        Me.TxtNit.Size = New System.Drawing.Size(187, 22)
-        Me.TxtNit.TabIndex = 1
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(17, 28)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(27, 16)
-        Me.Label7.TabIndex = 0
-        Me.Label7.Text = "Nit"
+        Me.PanBot.Controls.Add(Me.GroupBox1)
+        Me.PanBot.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.PanBot.Location = New System.Drawing.Point(0, 558)
+        Me.PanBot.Name = "PanBot"
+        Me.PanBot.Size = New System.Drawing.Size(886, 170)
+        Me.PanBot.TabIndex = 26
         '
         'GroupBox1
         '
@@ -193,13 +315,13 @@ Partial Class Productos
         Me.GroupBox1.Controls.Add(Me.ImgProd)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.TxtCod)
-        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.GroupBox1.Location = New System.Drawing.Point(0, 321)
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(899, 159)
-        Me.GroupBox1.TabIndex = 24
+        Me.GroupBox1.Size = New System.Drawing.Size(886, 170)
+        Me.GroupBox1.TabIndex = 25
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Producto"
         '
@@ -242,7 +364,7 @@ Partial Class Productos
         Me.LblPrecio.AutoSize = True
         Me.LblPrecio.Location = New System.Drawing.Point(357, 63)
         Me.LblPrecio.Name = "LblPrecio"
-        Me.LblPrecio.Size = New System.Drawing.Size(57, 16)
+        Me.LblPrecio.Size = New System.Drawing.Size(59, 16)
         Me.LblPrecio.TabIndex = 27
         Me.LblPrecio.Text = "Precio:"
         '
@@ -251,7 +373,7 @@ Partial Class Productos
         Me.LblMarca.AutoSize = True
         Me.LblMarca.Location = New System.Drawing.Point(355, 26)
         Me.LblMarca.Name = "LblMarca"
-        Me.LblMarca.Size = New System.Drawing.Size(55, 16)
+        Me.LblMarca.Size = New System.Drawing.Size(57, 16)
         Me.LblMarca.TabIndex = 26
         Me.LblMarca.Text = "Marca:"
         '
@@ -260,7 +382,7 @@ Partial Class Productos
         Me.LblDesc.AutoSize = True
         Me.LblDesc.Location = New System.Drawing.Point(11, 102)
         Me.LblDesc.Name = "LblDesc"
-        Me.LblDesc.Size = New System.Drawing.Size(91, 16)
+        Me.LblDesc.Size = New System.Drawing.Size(92, 16)
         Me.LblDesc.TabIndex = 24
         Me.LblDesc.Text = "Descripción"
         '
@@ -269,7 +391,7 @@ Partial Class Productos
         Me.LblProducto.AutoSize = True
         Me.LblProducto.Location = New System.Drawing.Point(12, 63)
         Me.LblProducto.Name = "LblProducto"
-        Me.LblProducto.Size = New System.Drawing.Size(74, 16)
+        Me.LblProducto.Size = New System.Drawing.Size(76, 16)
         Me.LblProducto.TabIndex = 23
         Me.LblProducto.Text = "Producto:"
         '
@@ -287,9 +409,9 @@ Partial Class Productos
         'ImgProd
         '
         Me.ImgProd.Dock = System.Windows.Forms.DockStyle.Right
-        Me.ImgProd.Location = New System.Drawing.Point(780, 18)
+        Me.ImgProd.Location = New System.Drawing.Point(767, 18)
         Me.ImgProd.Name = "ImgProd"
-        Me.ImgProd.Size = New System.Drawing.Size(116, 138)
+        Me.ImgProd.Size = New System.Drawing.Size(116, 149)
         Me.ImgProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.ImgProd.TabIndex = 17
         Me.ImgProd.TabStop = False
@@ -303,7 +425,7 @@ Partial Class Productos
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label1.Location = New System.Drawing.Point(8, 26)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(58, 16)
+        Me.Label1.Size = New System.Drawing.Size(60, 16)
         Me.Label1.TabIndex = 10
         Me.Label1.Text = "Código"
         '
@@ -313,6 +435,15 @@ Partial Class Productos
         Me.TxtCod.Name = "TxtCod"
         Me.TxtCod.Size = New System.Drawing.Size(138, 22)
         Me.TxtCod.TabIndex = 1
+        '
+        'PanCent
+        '
+        Me.PanCent.Controls.Add(Me.DGV1)
+        Me.PanCent.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanCent.Location = New System.Drawing.Point(0, 175)
+        Me.PanCent.Name = "PanCent"
+        Me.PanCent.Size = New System.Drawing.Size(886, 383)
+        Me.PanCent.TabIndex = 27
         '
         'DGV1
         '
@@ -334,10 +465,10 @@ Partial Class Productos
         Me.DGV1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Producto, Me.Descripcion, Me.Marca, Me.Precio, Me.Cantidad, Me.Total, Me.Imagen, Me.Disponible})
-        Me.DGV1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.DGV1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGV1.EnableHeadersVisualStyles = False
         Me.DGV1.GridColor = System.Drawing.Color.Red
-        Me.DGV1.Location = New System.Drawing.Point(0, 141)
+        Me.DGV1.Location = New System.Drawing.Point(0, 0)
         Me.DGV1.MultiSelect = False
         Me.DGV1.Name = "DGV1"
         Me.DGV1.ReadOnly = True
@@ -361,8 +492,8 @@ Partial Class Productos
         Me.DGV1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DGV1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV1.ShowCellToolTips = False
-        Me.DGV1.Size = New System.Drawing.Size(899, 180)
-        Me.DGV1.TabIndex = 23
+        Me.DGV1.Size = New System.Drawing.Size(886, 383)
+        Me.DGV1.TabIndex = 24
         '
         'Codigo
         '
@@ -438,149 +569,65 @@ Partial Class Productos
         Me.Disponible.Visible = False
         Me.Disponible.Width = 5
         '
-        'LblTotal
-        '
-        Me.LblTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.LblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblTotal.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.LblTotal.Location = New System.Drawing.Point(88, 83)
-        Me.LblTotal.Name = "LblTotal"
-        Me.LblTotal.Size = New System.Drawing.Size(356, 54)
-        Me.LblTotal.TabIndex = 29
-        Me.LblTotal.Text = "Total:Q."
-        Me.LblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'RdbContado
-        '
-        Me.RdbContado.AutoSize = True
-        Me.RdbContado.Checked = True
-        Me.RdbContado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RdbContado.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.RdbContado.Location = New System.Drawing.Point(219, 28)
-        Me.RdbContado.Name = "RdbContado"
-        Me.RdbContado.Size = New System.Drawing.Size(84, 20)
-        Me.RdbContado.TabIndex = 30
-        Me.RdbContado.TabStop = True
-        Me.RdbContado.Text = "Contado"
-        Me.RdbContado.UseVisualStyleBackColor = True
-        '
-        'RdbCredito
-        '
-        Me.RdbCredito.AutoSize = True
-        Me.RdbCredito.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RdbCredito.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.RdbCredito.Location = New System.Drawing.Point(219, 54)
-        Me.RdbCredito.Name = "RdbCredito"
-        Me.RdbCredito.Size = New System.Drawing.Size(76, 20)
-        Me.RdbCredito.TabIndex = 31
-        Me.RdbCredito.Text = "Credito"
-        Me.RdbCredito.UseVisualStyleBackColor = True
-        '
-        'LblAntic
-        '
-        Me.LblAntic.AutoSize = True
-        Me.LblAntic.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblAntic.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.LblAntic.Location = New System.Drawing.Point(311, 28)
-        Me.LblAntic.Name = "LblAntic"
-        Me.LblAntic.Size = New System.Drawing.Size(64, 16)
-        Me.LblAntic.TabIndex = 32
-        Me.LblAntic.Text = "Anticipo"
-        '
-        'TxtAntic
-        '
-        Me.TxtAntic.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtAntic.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.TxtAntic.Location = New System.Drawing.Point(314, 54)
-        Me.TxtAntic.Name = "TxtAntic"
-        Me.TxtAntic.Size = New System.Drawing.Size(130, 22)
-        Me.TxtAntic.TabIndex = 33
-        '
-        'BtnCobrar
-        '
-        Me.BtnCobrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.BtnCobrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.BtnCobrar.FlatAppearance.BorderSize = 0
-        Me.BtnCobrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow
-        Me.BtnCobrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.BtnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCobrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCobrar.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.BtnCobrar.Image = CType(resources.GetObject("BtnCobrar.Image"), System.Drawing.Image)
-        Me.BtnCobrar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnCobrar.Location = New System.Drawing.Point(0, 63)
-        Me.BtnCobrar.Name = "BtnCobrar"
-        Me.BtnCobrar.Size = New System.Drawing.Size(86, 60)
-        Me.BtnCobrar.TabIndex = 26
-        Me.BtnCobrar.Text = "Cobrar"
-        Me.BtnCobrar.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnCobrar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.BtnCobrar.UseVisualStyleBackColor = False
-        '
         'Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(114, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(899, 480)
-        Me.Controls.Add(Me.TxtAntic)
-        Me.Controls.Add(Me.LblAntic)
-        Me.Controls.Add(Me.RdbCredito)
-        Me.Controls.Add(Me.RdbContado)
-        Me.Controls.Add(Me.LblTotal)
-        Me.Controls.Add(Me.BtnBorrar)
-        Me.Controls.Add(Me.BtnLimpiar)
-        Me.Controls.Add(Me.DGV1)
-        Me.Controls.Add(Me.BtnCobrar)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.ClientSize = New System.Drawing.Size(886, 728)
+        Me.Controls.Add(Me.PanCent)
+        Me.Controls.Add(Me.PanBot)
+        Me.Controls.Add(Me.PanSup)
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.KeyPreview = True
         Me.Name = "Productos"
         Me.Text = "Productos"
+        Me.PanSup.ResumeLayout(False)
+        Me.PanSup.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.PanBot.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.ImgProd, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanCent.ResumeLayout(False)
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
+    Friend WithEvents PanSup As Panel
+    Friend WithEvents TxtAntic As TextBox
+    Friend WithEvents LblAntic As Label
+    Friend WithEvents RdbCredito As RadioButton
+    Friend WithEvents RdbContado As RadioButton
+    Friend WithEvents LblTotal As Label
     Friend WithEvents BtnBorrar As Button
     Friend WithEvents BtnLimpiar As Button
     Friend WithEvents BtnCobrar As Button
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents TxtNit As TextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents ImgProd As PictureBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents DGV1 As DataGridView
-    Friend WithEvents LblTotal As Label
-    Friend WithEvents BtnBuscarCli As Button
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
     Friend WithEvents LblCredito As Label
     Friend WithEvents LblDir As Label
     Friend WithEvents LblNombre As Label
-    Friend WithEvents BtnBuscaP As Button
+    Friend WithEvents PanBot As Panel
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents TxtPrecio As TextBox
+    Friend WithEvents TxtMarc As TextBox
+    Friend WithEvents TxtDes As TextBox
+    Friend WithEvents TxtProd As TextBox
     Friend WithEvents LblPrecio As Label
     Friend WithEvents LblMarca As Label
     Friend WithEvents LblDesc As Label
     Friend WithEvents LblProducto As Label
-    Friend WithEvents TxtDes As TextBox
-    Friend WithEvents TxtProd As TextBox
-    Friend WithEvents TxtPrecio As TextBox
-    Friend WithEvents TxtMarc As TextBox
-    Friend WithEvents RdbContado As RadioButton
-    Friend WithEvents RdbCredito As RadioButton
-    Friend WithEvents LblAntic As Label
-    Friend WithEvents TxtAntic As TextBox
+    Friend WithEvents BtnBuscaP As Button
+    Friend WithEvents ImgProd As PictureBox
+    Friend WithEvents Label1 As Label
+    Public WithEvents TxtCod As TextBox
+    Friend WithEvents PanCent As Panel
+    Friend WithEvents DGV1 As DataGridView
     Friend WithEvents Codigo As DataGridViewTextBoxColumn
     Friend WithEvents Producto As DataGridViewTextBoxColumn
     Friend WithEvents Descripcion As DataGridViewTextBoxColumn
@@ -590,5 +637,8 @@ Partial Class Productos
     Friend WithEvents Total As DataGridViewTextBoxColumn
     Friend WithEvents Imagen As DataGridViewTextBoxColumn
     Friend WithEvents Disponible As DataGridViewTextBoxColumn
-    Public WithEvents TxtCod As TextBox
+    Friend WithEvents CboCliente As ComboBox
+    Friend WithEvents BtnBuscarCli As Button
+    Friend WithEvents TxtNit As TextBox
+    Friend WithEvents Label7 As Label
 End Class

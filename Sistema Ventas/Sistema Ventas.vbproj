@@ -79,8 +79,16 @@
     <ApplicationIcon>icono2.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -142,7 +150,9 @@
     <Compile Include="BuscProd.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Clases\Clasecliente.vb" />
     <Compile Include="Clases\Conexion.vb" />
+    <Compile Include="Clases\GeneraCodi.vb" />
     <Compile Include="cliente.Designer.vb">
       <DependentUpon>cliente.vb</DependentUpon>
     </Compile>
@@ -182,6 +192,12 @@
     </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\GeneradorCod.Designer.vb">
+      <DependentUpon>GeneradorCod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\GeneradorCod.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Gan\DetGan.vb" />
@@ -237,6 +253,13 @@
     <Compile Include="RepClas\DetRep.vb" />
     <Compile Include="RepClas\EncProd.vb" />
     <Compile Include="RepClas\EncRep.vb" />
+    <Compile Include="RepClas\EtiquetaClase.vb" />
+    <Compile Include="RepClas\ImpCodigoB.Designer.vb">
+      <DependentUpon>ImpCodigoB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RepClas\ImpCodigoB.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RepClas\LLenRep.vb" />
     <Compile Include="RepClas\ReporteA.Designer.vb">
       <DependentUpon>ReporteA.vb</DependentUpon>
@@ -260,6 +283,12 @@
       <DependentUpon>ReporteProd.vb</DependentUpon>
     </Compile>
     <Compile Include="RepClas\ReporteProd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RepClas\Ticket.Designer.vb">
+      <DependentUpon>Ticket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RepClas\Ticket.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Report.vb" />
@@ -326,6 +355,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GeneradorCod.resx">
+      <DependentUpon>GeneradorCod.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gan\ReporteGan.resx">
       <DependentUpon>ReporteGan.vb</DependentUpon>
     </EmbeddedResource>
@@ -348,6 +380,10 @@
     <EmbeddedResource Include="Productos.resx">
       <DependentUpon>Productos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RepClas\ImpCodigoB.rdlc" />
+    <EmbeddedResource Include="RepClas\ImpCodigoB.resx">
+      <DependentUpon>ImpCodigoB.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RepClas\ReportA.rdlc" />
     <EmbeddedResource Include="RepClas\ReportD.rdlc" />
     <EmbeddedResource Include="RepClas\ReporteA.resx">
@@ -364,6 +400,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RepClas\ReportM.rdlc" />
     <EmbeddedResource Include="RepClas\ReportProd.rdlc" />
+    <EmbeddedResource Include="RepClas\Ticket.rdlc" />
+    <EmbeddedResource Include="RepClas\Ticket.resx">
+      <DependentUpon>Ticket.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reporte.resx">
       <DependentUpon>Reporte.vb</DependentUpon>
     </EmbeddedResource>
@@ -391,6 +431,7 @@
     <None Include="My Project\DataSources\EncGan.datasource" />
     <None Include="My Project\DataSources\EncProd.datasource" />
     <None Include="My Project\DataSources\EncRep.datasource" />
+    <None Include="My Project\DataSources\EtiquetaClase.datasource" />
     <None Include="My Project\DataSources\Sistema_Ventas.My.MyApplication.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

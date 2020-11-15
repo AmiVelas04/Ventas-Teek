@@ -1,15 +1,11 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Usuario
 
-    Dim servidor As String = "localhost"
-    Dim bd As String = "prod"
-    Dim user As String = "creditos"
-    Dim pass As String = "Cre-2020-Sis"
-    Dim cadenaconn As String = "server=" & servidor & ";" & "database=" & bd & ";" & "user id=" & user & ";" & "password=" & pass
-    Dim conn As New MySqlConnection(cadenaconn)
+    Dim cone As New Conexion
     Protected Sub buscar(ByVal consulta As String, ByRef tabla As DataTable)
+        cone.iniciar()
         Try
-            Dim adap As New MySqlDataAdapter(consulta, conn)
+            Dim adap As New MySqlDataAdapter(consulta, cone.conn)
             tabla.Dispose()
             adap.Fill(tabla)
             adap.Dispose()
@@ -34,7 +30,7 @@ Public Class Usuario
         Dim usu As New DataTable
         Dim consulta As String
         consulta = "select * from usuario where nombre like '%" & nom & "%'"
-        conn = New MySqlConnection(cadenaconn)
+
         buscar(consulta, usu)
         Return usu
     End Function
@@ -44,7 +40,7 @@ Public Class Usuario
         Dim consulta As String
         consulta = "select * from usuario where cod_usu=" & cod
 
-        Dim adap As New MySqlDataAdapter(consulta, conn)
+        Dim adap As New MySqlDataAdapter(consulta, cone.conn)
         adap.Fill(datos)
         If datos.Rows.Count >= 1 Then
             Return True
@@ -62,13 +58,13 @@ Public Class Usuario
         Dim comando As New MySqlCommand
         consulta = "update usuario set nombre='" & datos(1) & "', usuario='" & datos(2) & "', contrasena='" & datos(3) & "', nivel=" & datos(4) & " where cod_usu=" & datos(0)
 
-        comando.Connection = conn
+        comando.Connection = cone.conn
         comando.CommandText = consulta
         comando.CommandType = CommandType.Text
         Try
-            conn.Open()
+            cone.conn.Open()
             comando.ExecuteNonQuery()
-            conn.Close()
+            cone.conn.Close()
             MessageBox.Show("Datos de usuario actualizados correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             Dim bita As New Bitacora
             Dim accion As String
@@ -77,7 +73,7 @@ Public Class Usuario
             bita.bitacora(Nombre, accion)
 
         Catch ex As Exception
-            conn.Close()
+            cone.conn.Close()
             MessageBox.Show(ex.ToString)
             MessageBox.Show(consulta)
             Dim bita As New Bitacora
@@ -103,20 +99,20 @@ Public Class Usuario
         codigo = total + 1
 
         consulta = "insert into usuario (cod_usu, nombre, usuario, contrasena,nivel) values (" & codigo & ",'" & datos(1) & "','" & datos(2) & "','" & datos(3) & "'," & datos(4) & ")"
-        comando.Connection = conn
+        comando.Connection = cone.conn
         comando.CommandText = consulta
         comando.CommandType = CommandType.Text
         Try
-            conn.Open()
+            cone.conn.Open()
             comando.ExecuteNonQuery()
-            conn.Close()
+            cone.conn.Close()
             MessageBox.Show("Datos almacenados de usuario correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             Dim bita As New Bitacora
             Dim accion As String
             accion = "Se añadio un nuevo usuario: " & datos(0) & "con codigo: " & datos(5) & Chr(13)
             bita.bitacora(Nombre, accion)
         Catch ex As Exception
-            conn.Close()
+            cone.conn.Close()
             MessageBox.Show(ex.ToString)
             Dim bita As New Bitacora
             Dim accion As String
@@ -133,20 +129,20 @@ Public Class Usuario
         Dim consulta As String
         Dim comando As New MySqlCommand
         consulta = "delete from usuario where cod_usu=" & cod
-        comando.Connection = conn
+        comando.Connection = cone.conn
         comando.CommandText = consulta
         comando.CommandType = CommandType.Text
         Try
-            conn.Open()
+            cone.conn.Open()
             comando.ExecuteNonQuery()
-            conn.Close()
+            cone.conn.Close()
             MessageBox.Show("Datos eliminados correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             Dim bita As New Bitacora
             Dim accion As String
             accion = "Se elimino usuario con codigo: " & cod & Chr(13)
             bita.bitacora(Nombre, accion)
         Catch ex As Exception
-            conn.Close()
+            cone.conn.Close()
             MessageBox.Show(ex.ToString)
             Dim bita As New Bitacora
             Dim accion As String

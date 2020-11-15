@@ -1,5 +1,6 @@
 ﻿Public Class Productos
     Dim principal As New principal
+    Dim clie As New Clasecliente
 
     Private Sub Productos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GroupBox1.BackColor = Color.Transparent
@@ -7,11 +8,26 @@
 
         Label1.BackColor = Color.Transparent
         Me.Focus()
-
+        llenarcli()
 
     End Sub
 
+    Private Sub llenarcli()
+        ' Agregar clientes
+        Dim datos As New DataTable
+        datos = clie.buscarcli()
+        CboCliente.DataSource = datos
+        CboCliente.DisplayMember = "nombre"
+        CboCliente.ValueMember = "codigo"
+        Dim cliente As New AutoCompleteStringCollection
+        For Each fila As DataRow In datos.Rows
+            cliente.Add(fila("Nombre").ToString)
+        Next
+        CboCliente.AutoCompleteCustomSource = cliente
+        CboCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+        CboCliente.AutoCompleteSource = AutoCompleteSource.CustomSource
 
+    End Sub
 
 
     Private Sub TxtCod_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtCod.KeyDown
@@ -99,7 +115,7 @@
 
 
 
-    Private Sub BtnBuscaP_Click(sender As Object, e As EventArgs) Handles BtnBuscaP.Click
+    Private Sub BtnBuscaP_Click(sender As Object, e As EventArgs)
         Buscarc()
 
     End Sub
@@ -111,7 +127,7 @@
             cambiar_precio()
         ElseIf e.KeyCode = Keys.F6 Then
             cambiar_cant()
-        ElseIf e.KeyCode = Keys.f2 Then
+        ElseIf e.KeyCode = Keys.F2 Then
             Dim busc As New BuscProd
             busc.Show()
         ElseIf e.KeyCode = Keys.F5 Then
@@ -179,7 +195,7 @@
         End If
     End Function
 
-    Private Sub BtnBuscarCli_Click(sender As Object, e As EventArgs) Handles BtnBuscarCli.Click
+    Private Sub BtnBuscarCli_Click(sender As Object, e As EventArgs)
         If TxtNit.Text <> "" Then
             buscarcli()
         End If
@@ -200,7 +216,7 @@
         Dim datos() As String
         Dim usuc As Integer = VariablesUNI.cod
         Dim usun As String = VariablesUNI.Nombre
-        cliente = principal.buscli(TxtNit.Text)
+        cliente = principal.buscli(CboCliente.SelectedValue.ToString)
 
         datos = {cliente.Rows(0)(0), cliente.Rows(0)(1), cliente.Rows(0)(2), cliente.Rows(0)(3), cliente.Rows(0)(4), TxtNit.Text, Total}
         prod.Columns.Add("codigo").DataType = System.Type.GetType("System.String")
@@ -220,10 +236,10 @@
             prod.Rows.Add(fila)
         Next
         Dim tipo As String
-        If LblNombre.Text = "Nombre: N/E" Or LblNombre.Text = "Nombre:" Then
-            MessageBox.Show("No se puede realizar la compra debido a que no exite ningun cliente valido", "No hay cliente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        Else
-            If RdbContado.Checked = True Then
+        ' If LblNombre.Text = "Nombre: N/E" Or LblNombre.Text = "Nombre:" Then
+        'MessageBox.Show("No se puede realizar la compra debido a que no exite ningun cliente valido", "No hay cliente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        'Else
+        If RdbContado.Checked = True Then
                 Try
                     tipo = "Contado"
                     principal.fact_gen(datos, prod, usuc, usun, tipo, 0, Total)
@@ -242,12 +258,12 @@
 
                 End If
             End If
-        End If
+        ' End If
         limpiar()
     End Sub
 
 
-    Private Sub DGV1_Click(sender As Object, e As EventArgs) Handles DGV1.Click
+    Private Sub DGV1_Click(sender As Object, e As EventArgs)
         If DGV1.RowCount >= 1 Then
             Dim indice As Integer
             indice = DGV1.CurrentRow.Index
@@ -280,26 +296,26 @@
         End If
     End Sub
 
-    Private Sub TxtNit_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtNit.KeyDown
+    Private Sub TxtNit_KeyDown(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Return And TxtNit.Text <> "" Then
             buscarcli()
         End If
     End Sub
 
-    Private Sub RdbContado_CheckedChanged(sender As Object, e As EventArgs) Handles RdbContado.CheckedChanged
+    Private Sub RdbContado_CheckedChanged(sender As Object, e As EventArgs)
         LblAntic.Visible = False
         TxtAntic.Visible = False
         TxtAntic.Clear()
     End Sub
 
-    Private Sub RdbCredito_CheckedChanged(sender As Object, e As EventArgs) Handles RdbCredito.CheckedChanged
+    Private Sub RdbCredito_CheckedChanged(sender As Object, e As EventArgs)
         LblAntic.Visible = True
         TxtAntic.Visible = True
         TxtAntic.Text = 0
 
     End Sub
 
-    Private Sub TxtAntic_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtAntic.KeyPress
+    Private Sub TxtAntic_KeyPress(sender As Object, e As KeyPressEventArgs)
         If IsNumeric(e.KeyChar) Or e.KeyChar = "." Then
 
         Else
@@ -307,7 +323,7 @@
         End If
     End Sub
 
-    Private Sub TxtAntic_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtAntic.KeyDown
+    Private Sub TxtAntic_KeyDown(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Escape Then
             TxtAntic.Clear()
         End If
@@ -337,6 +353,25 @@
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click
         limpiar()
 
+    End Sub
+
+    Private Sub CboCliente_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CboCliente.SelectedIndexChanged
+        If (CboCliente.Text <> "" And CboCliente.SelectedValue.ToString <> "System.Data.DataRowView") Then
+            busquedacli(CboCliente.SelectedValue.ToString)
+        Else
+            busquedacli("0")
+        End If
+    End Sub
+
+    Private Sub busquedacli(ByVal cod As String)
+        Dim datos As New DataTable()
+
+        datos = clie.clieespec(cod)
+        If (datos.Rows.Count > 0) Then
+            TxtNit.Text = datos.Rows(0)(1).ToString
+            LblDir.Text = datos.Rows(0)(0).ToString
+            LblCredito.Text = datos.Rows(0)(2).ToString
+        End If
     End Sub
 
 

@@ -25,10 +25,12 @@ Partial Class Ventas
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventas))
         Me.Panelsup = New System.Windows.Forms.Panel()
+        Me.BtnMin = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.LbUsu = New System.Windows.Forms.Label()
         Me.BtnCerrar = New System.Windows.Forms.Button()
         Me.panelLat = New System.Windows.Forms.Panel()
+        Me.BtnCod = New System.Windows.Forms.Button()
         Me.BtnCaja = New System.Windows.Forms.Button()
         Me.BtnGastos = New System.Windows.Forms.Button()
         Me.BtnABono = New System.Windows.Forms.Button()
@@ -49,6 +51,7 @@ Partial Class Ventas
         'Panelsup
         '
         Me.Panelsup.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panelsup.Controls.Add(Me.BtnMin)
         Me.Panelsup.Controls.Add(Me.BtnGuardar)
         Me.Panelsup.Controls.Add(Me.LbUsu)
         Me.Panelsup.Controls.Add(Me.BtnCerrar)
@@ -57,6 +60,17 @@ Partial Class Ventas
         Me.Panelsup.Name = "Panelsup"
         Me.Panelsup.Size = New System.Drawing.Size(1024, 40)
         Me.Panelsup.TabIndex = 17
+        '
+        'BtnMin
+        '
+        Me.BtnMin.FlatAppearance.BorderSize = 0
+        Me.BtnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnMin.Image = CType(resources.GetObject("BtnMin.Image"), System.Drawing.Image)
+        Me.BtnMin.Location = New System.Drawing.Point(936, 0)
+        Me.BtnMin.Name = "BtnMin"
+        Me.BtnMin.Size = New System.Drawing.Size(41, 40)
+        Me.BtnMin.TabIndex = 3
+        Me.BtnMin.UseVisualStyleBackColor = True
         '
         'BtnGuardar
         '
@@ -96,15 +110,16 @@ Partial Class Ventas
         Me.BtnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCerrar.Location = New System.Drawing.Point(988, 0)
+        Me.BtnCerrar.Location = New System.Drawing.Point(983, 0)
         Me.BtnCerrar.Name = "BtnCerrar"
-        Me.BtnCerrar.Size = New System.Drawing.Size(36, 40)
+        Me.BtnCerrar.Size = New System.Drawing.Size(41, 40)
         Me.BtnCerrar.TabIndex = 0
         Me.BtnCerrar.UseVisualStyleBackColor = True
         '
         'panelLat
         '
         Me.panelLat.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.panelLat.Controls.Add(Me.BtnCod)
         Me.panelLat.Controls.Add(Me.BtnCaja)
         Me.panelLat.Controls.Add(Me.BtnGastos)
         Me.panelLat.Controls.Add(Me.BtnABono)
@@ -119,6 +134,23 @@ Partial Class Ventas
         Me.panelLat.Name = "panelLat"
         Me.panelLat.Size = New System.Drawing.Size(138, 728)
         Me.panelLat.TabIndex = 18
+        '
+        'BtnCod
+        '
+        Me.BtnCod.FlatAppearance.BorderSize = 0
+        Me.BtnCod.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCod.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCod.ForeColor = System.Drawing.Color.White
+        Me.BtnCod.Image = CType(resources.GetObject("BtnCod.Image"), System.Drawing.Image)
+        Me.BtnCod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnCod.Location = New System.Drawing.Point(0, 657)
+        Me.BtnCod.Name = "BtnCod"
+        Me.BtnCod.Size = New System.Drawing.Size(135, 59)
+        Me.BtnCod.TabIndex = 9
+        Me.BtnCod.Text = "Generador de codigos"
+        Me.BtnCod.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnCod.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnCod.UseVisualStyleBackColor = True
         '
         'BtnCaja
         '
@@ -334,4 +366,6 @@ Partial Class Ventas
     Friend WithEvents BtnGastos As Button
     Friend WithEvents BtnCaja As Button
     Friend WithEvents BtnGuardar As Button
+    Friend WithEvents BtnMin As Button
+    Friend WithEvents BtnCod As Button
 End Class

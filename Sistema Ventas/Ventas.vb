@@ -58,7 +58,7 @@
 
     Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
 
-        If (MessageBox.Show("Desea salir", "Salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = vbYes) Then
+        If (MessageBox.Show("¿Desea salir del programa?", "Salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = vbYes) Then
             End
         End If
     End Sub
@@ -131,6 +131,17 @@
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
         Dim res As New Respaldo()
         res.Show()
+
+    End Sub
+
+    Private Sub BtnMin_Click(sender As Object, e As EventArgs) Handles BtnMin.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub BtnCod_Click(sender As Object, e As EventArgs) Handles BtnCod.Click
+        'abrir_from(New GeneradorCod)
+        Dim codi As New GeneradorCod
+        codi.ShowDialog()
 
     End Sub
 End Class
