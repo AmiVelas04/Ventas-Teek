@@ -206,6 +206,7 @@
             MessageBox.Show("No se ha ingresado ningun producto", "No hay productos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
+        Dim codicli As String = ""
         Dim prod As New DataTable
         Dim cliente As New DataTable
         Dim filas As Integer
@@ -216,7 +217,12 @@
         Dim datos() As String
         Dim usuc As Integer = VariablesUNI.cod
         Dim usun As String = VariablesUNI.Nombre
-        cliente = principal.buscli(CboCliente.SelectedValue.ToString)
+        If (CboCliente.SelectedValue = Nothing) Then
+            codicli = "0"
+        Else
+            codicli = CboCliente.SelectedValue.ToString
+        End If
+        cliente = principal.buscli(codicli, TxtNit.Text, CboCliente.Text)
 
         datos = {cliente.Rows(0)(0), cliente.Rows(0)(1), cliente.Rows(0)(2), cliente.Rows(0)(3), cliente.Rows(0)(4), TxtNit.Text, Total}
         prod.Columns.Add("codigo").DataType = System.Type.GetType("System.String")
@@ -283,7 +289,7 @@
     Private Sub buscarcli()
         Dim datos As New DataTable
         Dim nit As String = TxtNit.Text
-        datos = principal.buscli(nit)
+        datos = principal.buscli(CboCliente.SelectedValue.ToString(), TxtNit.Text, CboCliente.Text)
 
         LblNombre.Text = "Nombre: " & datos.Rows(0)(1).ToString
         LblDir.Text = "Direccion: " & datos.Rows(0)(2).ToString
@@ -374,5 +380,7 @@
         End If
     End Sub
 
+    Private Sub BtnBuscarCli_Click_1(sender As Object, e As EventArgs) Handles BtnBuscarCli.Click
 
+    End Sub
 End Class

@@ -32,6 +32,7 @@ Partial Class GeneradorCod
         Me.BtnGen = New System.Windows.Forms.Button()
         Me.TxtCodBarras = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ChkEditar = New System.Windows.Forms.CheckBox()
         Me.PanSup.SuspendLayout()
         CType(Me.PcbCod, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NudEtiqueta, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -39,6 +40,7 @@ Partial Class GeneradorCod
         '
         'PanSup
         '
+        Me.PanSup.Controls.Add(Me.ChkEditar)
         Me.PanSup.Controls.Add(Me.PcbCod)
         Me.PanSup.Controls.Add(Me.Label3)
         Me.PanSup.Controls.Add(Me.NudEtiqueta)
@@ -140,6 +142,16 @@ Partial Class GeneradorCod
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Codigo de Barras"
         '
+        'ChkEditar
+        '
+        Me.ChkEditar.AutoSize = True
+        Me.ChkEditar.Location = New System.Drawing.Point(322, 62)
+        Me.ChkEditar.Name = "ChkEditar"
+        Me.ChkEditar.Size = New System.Drawing.Size(76, 24)
+        Me.ChkEditar.TabIndex = 9
+        Me.ChkEditar.Text = "Editar"
+        Me.ChkEditar.UseVisualStyleBackColor = True
+        '
         'GeneradorCod
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 20.0!)
@@ -170,4 +182,5 @@ Partial Class GeneradorCod
     Friend WithEvents Label3 As Label
     Friend WithEvents NudEtiqueta As NumericUpDown
     Friend WithEvents PcbCod As PictureBox
+    Friend WithEvents ChkEditar As CheckBox
 End Class

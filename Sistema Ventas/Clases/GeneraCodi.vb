@@ -3,8 +3,44 @@ Imports System.Drawing.Imaging
 Imports System.Drawing.Drawing2D
 Imports iTextSharp.text.pdf
 Imports iTextSharp.text.pdf.Barcode
+Imports MySql.Data.MySqlClient
 
 Public Class GeneraCodi
+    Dim conec As New Conexion
+
+    Private Sub buscar(ByVal consulta As String, ByRef datos As DataTable)
+        conec.iniciar()
+        datos.Dispose()
+
+        Try
+            Dim adap As New MySqlDataAdapter(consulta, conec.conn)
+            adap.Fill(datos)
+            adap.Dispose()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+        End Try
+
+
+
+
+    End Sub
+    Private Function consultag(ByVal consulta As String) As Boolean
+        conec.iniciar()
+        Dim com As New MySqlCommand
+        com.Connection = conec.conn
+        com.CommandText = consulta
+        com.CommandType = CommandType.Text
+        Try
+            conec.conn.Open()
+            com.ExecuteNonQuery()
+            conec.conn.Close()
+            Return True
+        Catch ex As Exception
+            conec.conn.Close()
+            MessageBox.Show(ex.ToString)
+            Return False
+        End Try
+    End Function
     Public Function codigob(ByVal codigo As String, Optional ByVal Contexto As Boolean = False, Optional ByVal alto As Single = 0, Optional ByVal texto As String = "")
         Dim barcode As New Barcode128
         barcode.StartStopText = True
@@ -107,5 +143,20 @@ Public Class GeneraCodi
 
     End Sub
 
+
+    Public Function existecod(ByVal cod As String) As Boolean
+        Dim datos As New DataTable
+        Dim consulta As String
+        consulta = "select COUNT(*) FROM producto p WHERE p.CODIGO_P='" & cod & "'"
+        buscar(consulta, datos)
+        Dim codi As Integer
+        codi = Integer.Parse(datos.Rows(0)(0).ToString)
+        If codi > 0 Then
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
 
 End Class

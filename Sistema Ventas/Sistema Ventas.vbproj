@@ -150,6 +150,7 @@
     <Compile Include="BuscProd.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Clases\CajaClase.vb" />
     <Compile Include="Clases\Clasecliente.vb" />
     <Compile Include="Clases\Conexion.vb" />
     <Compile Include="Clases\GeneraCodi.vb" />

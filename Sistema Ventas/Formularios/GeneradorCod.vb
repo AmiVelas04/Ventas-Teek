@@ -17,8 +17,12 @@ Public Class GeneradorCod
                 num = CLng((0 - 9) * Rnd() + 9)
                 cod = cod & num.ToString
             Next
-            TxtCodBarras.Text = cod
-            bandera = False
+            If (Not codif.existecod(cod)) Then
+                bandera = False
+                TxtCodBarras.Text = cod
+            Else
+                bandera = True
+            End If
         Loop
 
     End Sub
@@ -50,5 +54,14 @@ Public Class GeneradorCod
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
+    End Sub
+
+    Private Sub ChkEditar_CheckedChanged(sender As Object, e As EventArgs) Handles ChkEditar.CheckedChanged
+        If ChkEditar.Checked Then
+            TxtCodBarras.Enabled = True
+        Else
+            TxtCodBarras.Enabled = False
+
+        End If
     End Sub
 End Class

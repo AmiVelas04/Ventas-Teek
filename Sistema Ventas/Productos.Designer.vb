@@ -112,7 +112,7 @@ Partial Class Productos
         Me.LblAntic.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.LblAntic.Location = New System.Drawing.Point(277, 22)
         Me.LblAntic.Name = "LblAntic"
-        Me.LblAntic.Size = New System.Drawing.Size(65, 16)
+        Me.LblAntic.Size = New System.Drawing.Size(64, 16)
         Me.LblAntic.TabIndex = 41
         Me.LblAntic.Text = "Anticipo"
         '
@@ -123,7 +123,7 @@ Partial Class Productos
         Me.RdbCredito.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.RdbCredito.Location = New System.Drawing.Point(185, 48)
         Me.RdbCredito.Name = "RdbCredito"
-        Me.RdbCredito.Size = New System.Drawing.Size(78, 20)
+        Me.RdbCredito.Size = New System.Drawing.Size(76, 20)
         Me.RdbCredito.TabIndex = 40
         Me.RdbCredito.Text = "Credito"
         Me.RdbCredito.UseVisualStyleBackColor = True
@@ -136,7 +136,7 @@ Partial Class Productos
         Me.RdbContado.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.RdbContado.Location = New System.Drawing.Point(185, 22)
         Me.RdbContado.Name = "RdbContado"
-        Me.RdbContado.Size = New System.Drawing.Size(86, 20)
+        Me.RdbContado.Size = New System.Drawing.Size(84, 20)
         Me.RdbContado.TabIndex = 39
         Me.RdbContado.TabStop = True
         Me.RdbContado.Text = "Contado"
@@ -261,7 +261,7 @@ Partial Class Productos
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(14, 68)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(28, 16)
+        Me.Label7.Size = New System.Drawing.Size(27, 16)
         Me.Label7.TabIndex = 4
         Me.Label7.Text = "Nit"
         '
@@ -270,7 +270,7 @@ Partial Class Productos
         Me.LblCredito.AutoSize = True
         Me.LblCredito.Location = New System.Drawing.Point(236, 90)
         Me.LblCredito.Name = "LblCredito"
-        Me.LblCredito.Size = New System.Drawing.Size(70, 16)
+        Me.LblCredito.Size = New System.Drawing.Size(66, 16)
         Me.LblCredito.TabIndex = 2
         Me.LblCredito.Text = "Credito: "
         '
@@ -279,7 +279,7 @@ Partial Class Productos
         Me.LblDir.AutoSize = True
         Me.LblDir.Location = New System.Drawing.Point(270, 33)
         Me.LblDir.Name = "LblDir"
-        Me.LblDir.Size = New System.Drawing.Size(80, 16)
+        Me.LblDir.Size = New System.Drawing.Size(78, 16)
         Me.LblDir.TabIndex = 1
         Me.LblDir.Text = "Dirección:"
         '
@@ -288,7 +288,7 @@ Partial Class Productos
         Me.LblNombre.AutoSize = True
         Me.LblNombre.Location = New System.Drawing.Point(14, 6)
         Me.LblNombre.Name = "LblNombre"
-        Me.LblNombre.Size = New System.Drawing.Size(69, 16)
+        Me.LblNombre.Size = New System.Drawing.Size(67, 16)
         Me.LblNombre.TabIndex = 0
         Me.LblNombre.Text = "Nombre:"
         '
@@ -364,7 +364,7 @@ Partial Class Productos
         Me.LblPrecio.AutoSize = True
         Me.LblPrecio.Location = New System.Drawing.Point(357, 63)
         Me.LblPrecio.Name = "LblPrecio"
-        Me.LblPrecio.Size = New System.Drawing.Size(59, 16)
+        Me.LblPrecio.Size = New System.Drawing.Size(57, 16)
         Me.LblPrecio.TabIndex = 27
         Me.LblPrecio.Text = "Precio:"
         '
@@ -373,7 +373,7 @@ Partial Class Productos
         Me.LblMarca.AutoSize = True
         Me.LblMarca.Location = New System.Drawing.Point(355, 26)
         Me.LblMarca.Name = "LblMarca"
-        Me.LblMarca.Size = New System.Drawing.Size(57, 16)
+        Me.LblMarca.Size = New System.Drawing.Size(55, 16)
         Me.LblMarca.TabIndex = 26
         Me.LblMarca.Text = "Marca:"
         '
@@ -382,7 +382,7 @@ Partial Class Productos
         Me.LblDesc.AutoSize = True
         Me.LblDesc.Location = New System.Drawing.Point(11, 102)
         Me.LblDesc.Name = "LblDesc"
-        Me.LblDesc.Size = New System.Drawing.Size(92, 16)
+        Me.LblDesc.Size = New System.Drawing.Size(91, 16)
         Me.LblDesc.TabIndex = 24
         Me.LblDesc.Text = "Descripción"
         '
@@ -391,7 +391,7 @@ Partial Class Productos
         Me.LblProducto.AutoSize = True
         Me.LblProducto.Location = New System.Drawing.Point(12, 63)
         Me.LblProducto.Name = "LblProducto"
-        Me.LblProducto.Size = New System.Drawing.Size(76, 16)
+        Me.LblProducto.Size = New System.Drawing.Size(74, 16)
         Me.LblProducto.TabIndex = 23
         Me.LblProducto.Text = "Producto:"
         '
@@ -425,7 +425,7 @@ Partial Class Productos
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label1.Location = New System.Drawing.Point(8, 26)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(60, 16)
+        Me.Label1.Size = New System.Drawing.Size(58, 16)
         Me.Label1.TabIndex = 10
         Me.Label1.Text = "Código"
         '

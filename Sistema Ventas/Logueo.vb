@@ -76,7 +76,7 @@ Public Class Logueo
 
             Else
             MessageBox.Show("No es posible conectarse al servidor de base de datos, comuniquese con su administrador")
-            MessageBox.Show(datos.Rows.Count)
+            '  MessageBox.Show(datos.Rows.Count)
             Return False
             End If
 

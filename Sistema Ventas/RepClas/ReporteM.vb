@@ -6,6 +6,8 @@ Public Class ReporteM
         ReportViewer1.LocalReport.DataSources.Clear()
         ReportViewer1.LocalReport.DataSources.Add(New ReportDataSource("Encabezado", encabezado))
         ReportViewer1.LocalReport.DataSources.Add(New ReportDataSource("Detalle", Detalle))
+        ReportViewer1.SetDisplayMode(DisplayMode.PrintLayout)
+        ReportViewer1.ZoomMode = ZoomMode.Percent
         Me.ReportViewer1.RefreshReport()
     End Sub
 End Class

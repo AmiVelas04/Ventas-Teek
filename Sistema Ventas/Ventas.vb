@@ -2,7 +2,20 @@
 
     Friend dataprod() As String
 
-
+    Private Const WM_SYSCOMMAND As Integer = &H112&
+    Private Const MOUSE_MOVE As Integer = &HF012&
+    '
+    ' Declaraciones del API al estilo .NET
+    <System.Runtime.InteropServices.DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
+    Private Shared Sub ReleaseCapture()
+    End Sub
+    '
+    <System.Runtime.InteropServices.DllImport("user32.DLL", EntryPoint:="SendMessage")>
+    Private Shared Sub SendMessage(
+        ByVal hWnd As System.IntPtr, ByVal wMsg As Integer,
+        ByVal wParam As Integer, ByVal lParam As Integer
+        )
+    End Sub
 
     Private Sub TmrMostrar_Tick(sender As Object, e As EventArgs) Handles TmrMostrar.Tick
         Dim val As Integer
@@ -71,7 +84,10 @@
     Private Sub PanelCentral_Paint(sender As Object, e As PaintEventArgs) Handles PanelCentral.Paint
 
     End Sub
-
+    Private Sub moverForm()
+        ReleaseCapture()
+        SendMessage(Me.Handle, WM_SYSCOMMAND, MOUSE_MOVE, 0)
+    End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles BtnCliente.Click
         abrir_from(New cliente)
     End Sub
@@ -124,8 +140,9 @@
     End Sub
 
     Private Sub BtnCaja_Click(sender As Object, e As EventArgs) Handles BtnCaja.Click
-        Dim caja As New CorteCaja
-        caja.Show()
+        abrir_from(New CorteCaja)
+        'Dim caja As New CorteCaja
+        'caja.Show()
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
@@ -142,6 +159,19 @@
         'abrir_from(New GeneradorCod)
         Dim codi As New GeneradorCod
         codi.ShowDialog()
+
+    End Sub
+
+    Private Sub Panelsup_MouseDown(sender As Object, e As MouseEventArgs) Handles Panelsup.MouseDown
+        If e.Button = MouseButtons.Left Then
+            moverForm()
+        End If
+
+    End Sub
+
+
+
+    Private Sub Panelsup_Paint(sender As Object, e As PaintEventArgs) Handles Panelsup.Paint
 
     End Sub
 End Class

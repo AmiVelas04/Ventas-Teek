@@ -5,6 +5,7 @@ Imports MySql.Data.MySqlClient
 Public Class principal
     Dim bita As New Bitacora
     Dim conec As New Conexion
+    Dim caj As New CajaClase
 
     'busqueda general
     Protected Sub buscar(ByVal consulta As String, ByRef tabla As DataTable)
@@ -39,26 +40,41 @@ Public Class principal
 
 #Region "Clientes"
     'busca el cliente y devuele los datos en un datatable
-    Friend Function buscli(ByVal cod As String)
-        Dim datos As New DataTable
-        Dim consulta As String
-        consulta = "Select cod_cli,nombre, direccion, credito, saldo from cliente where cod_cli='" & cod & "'"
-        buscar(consulta, datos)
-        If datos.Rows.Count >= 1 Then
-            Return datos
+    Friend Function buscli(ByVal cod As String, ByVal nit As String, ByVal nomcli As String)
 
+        If (existecli(nit)) Then
+            Dim datos As New DataTable
+            Dim consulta As String
+            consulta = "Select cod_cli,nombre, direccion, credito, saldo from cliente where cod_cli='" & cod & "'"
+            buscar(consulta, datos)
+            If datos.Rows.Count >= 1 Then
+                Return datos
+
+            Else
+                MessageBox.Show("No se encontró el cliente")
+                Dim fila = datos.NewRow
+                fila("cod_cli") = "0"
+                fila("Nombre") = "N/E"
+                fila("direccion") = "N/E"
+                fila("Credito") = 0
+                fila("Saldo") = 0
+
+                datos.Rows.Add(fila)
+                Return datos
+            End If
         Else
-            MessageBox.Show("No se encontró el cliente")
-            Dim fila = datos.NewRow
-            fila("cod_cli") = "0"
-            fila("Nombre") = "N/E"
-            fila("direccion") = "N/E"
-            fila("Credito") = 0
-            fila("Saldo") = 0
+            Dim datosing() As String = {nomcli, "", nit, "0", "0"}
+            Dim codi As Integer = nuevocli(datosing)
+            Dim datos2 As New DataTable
+            Dim consulta1 = "Select cod_cli,nombre, direccion, credito, saldo from cliente where cod_cli='" & codi & "'"
+            buscar(consulta1, datos2)
+            If datos2.Rows.Count >= 1 Then
+                Return datos2
+            End If
 
-            datos.Rows.Add(fila)
-            Return datos
         End If
+
+
 
     End Function
     'busca el cliente por medio del nombre
@@ -210,6 +226,17 @@ Public Class principal
 
         End Try
     End Sub
+
+    Private Function nuevocli(ByVal datos() As String) As Integer
+        Dim consulta As String
+        Dim codigo As Integer
+        codigo = conteocli() + 1
+        consulta = "insert into cliente (cod_cli, nombre, direccion, nit,credito,saldo) values ('" & codigo & "','" & datos(0) & "','" & datos(1) & "','" & datos(2) & "'," & datos(3) & "," & datos(4) & ")"
+        Consulgeneral(consulta)
+        Return codigo
+
+    End Function
+
 #End Region
 
 
@@ -523,6 +550,7 @@ Public Class principal
     Private Sub llenarFactura(ByVal datos() As String, ByVal prod As DataTable, ByVal usunom As String, ByVal tipo As String)
         Dim total As Integer = prod.Rows.Count
         Dim encabezado As New EncFact
+        Dim gtotal As Decimal = 0
         encabezado.Numero = datos(0)
         encabezado.Nombre = datos(1)
         encabezado.Direccion = datos(2)
@@ -543,9 +571,11 @@ Public Class principal
             Dim valor As Decimal = Convert.ToDecimal(prod.Rows(cont)(4).ToString)
             Dim totalp As Integer = cant * valor
             producto.Total = totalp
+            gtotal += totalp
             encabezado.Detalle.Add(producto)
         Next
-
+        Dim ingreso() As String = {gtotal.ToString, "Venta No. " & datos(0), "Ingreso", "Activo", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), usunom}
+        ingresocaja(ingreso)
         Dim fact As New Ticket
         fact.encabezado.Add(encabezado)
         fact.Detalle = encabezado.Detalle
@@ -553,6 +583,10 @@ Public Class principal
         fact.Show()
 
 
+    End Sub
+
+    Private Sub ingresocaja(ByVal datos() As String)
+        caj.ingresoope(datos)
     End Sub
 
 #End Region

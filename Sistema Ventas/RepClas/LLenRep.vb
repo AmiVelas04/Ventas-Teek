@@ -1,15 +1,13 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class LLenRep
-    Dim servidor As String = "192.168.1.103"
-    Dim bd As String = "prod"
-    Dim user As String = "prueba"
-    Dim pass As String = "1532"
-    Dim cadenaconn As String = "server=" & servidor & ";" & "database=" & bd & ";" & "user id=" & user & ";" & "password=" & pass
-    Dim conn As New MySqlConnection(cadenaconn)
+    Dim conec As New Conexion
+
 
     Protected Sub buscar(ByVal consulta As String, ByRef tabla As DataTable)
+        conec.iniciar()
+
         Try
-            Dim adap As New MySqlDataAdapter(consulta, conn)
+            Dim adap As New MySqlDataAdapter(consulta, conec.conn)
             tabla.Dispose()
             adap.Fill(tabla)
             adap.Dispose()
@@ -21,18 +19,19 @@ Public Class LLenRep
     End Sub
 
     Private Function consulgeneral(consulta) As Boolean
+        conec.iniciar()
         Dim com As New MySqlCommand
-        com.Connection = conn
+        com.Connection = conec.conn
         com.CommandText = consulta
         com.CommandType = CommandType.Text
         Try
-            conn.Open()
+            conec.conn.Open()
             com.ExecuteNonQuery()
-            conn.Close()
+            conec.conn.Close()
             Return True
 
         Catch ex As Exception
-            conn.Close()
+            conec.conn.Close()
             MessageBox.Show(ex.ToString)
             Return False
         End Try
@@ -271,7 +270,7 @@ Public Class LLenRep
         Dim datos As New DataTable
         Dim datost As New DataTable
         Dim total As Decimal
-        consulta = "Select Nombre, Marca, cantidad, precioc,imagen  from producto order by Nombre,Marca"
+        consulta = "Select Nombre, Marca, cantidad, precioc,imagen, descripcion from producto order by Nombre,Marca"
         consultat = "select Sum(cantidad*precioc) as Total from producto"
         buscar(consulta, datos)
         buscar(consultat, datost)
@@ -293,6 +292,7 @@ Public Class LLenRep
             For cont = 0 To tprod - 1
                 Dim detalle As New DetProd()
                 detalle.Nombre = dat(cont)(0)
+                detalle.Descripcion = dat(cont)(5)
                 detalle.Marca = dat(cont)(1)
                 detalle.Cantidad = dat(cont)(2)
                 detalle.Precio = dat(cont)(3)

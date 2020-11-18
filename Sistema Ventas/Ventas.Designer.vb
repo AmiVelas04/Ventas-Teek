@@ -160,7 +160,7 @@ Partial Class Ventas
         Me.BtnCaja.ForeColor = System.Drawing.Color.White
         Me.BtnCaja.Image = CType(resources.GetObject("BtnCaja.Image"), System.Drawing.Image)
         Me.BtnCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnCaja.Location = New System.Drawing.Point(3, 411)
+        Me.BtnCaja.Location = New System.Drawing.Point(3, 355)
         Me.BtnCaja.Name = "BtnCaja"
         Me.BtnCaja.Size = New System.Drawing.Size(139, 45)
         Me.BtnCaja.TabIndex = 8
@@ -179,13 +179,14 @@ Partial Class Ventas
         Me.BtnGastos.ForeColor = System.Drawing.Color.White
         Me.BtnGastos.Image = CType(resources.GetObject("BtnGastos.Image"), System.Drawing.Image)
         Me.BtnGastos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnGastos.Location = New System.Drawing.Point(3, 156)
+        Me.BtnGastos.Location = New System.Drawing.Point(3, 452)
         Me.BtnGastos.Name = "BtnGastos"
         Me.BtnGastos.Size = New System.Drawing.Size(135, 38)
         Me.BtnGastos.TabIndex = 7
         Me.BtnGastos.Text = "Gastos"
         Me.BtnGastos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnGastos.UseVisualStyleBackColor = True
+        Me.BtnGastos.Visible = False
         '
         'BtnABono
         '
@@ -215,7 +216,7 @@ Partial Class Ventas
         Me.BtnReportes.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.BtnReportes.Image = CType(resources.GetObject("BtnReportes.Image"), System.Drawing.Image)
         Me.BtnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnReportes.Location = New System.Drawing.Point(-6, 359)
+        Me.BtnReportes.Location = New System.Drawing.Point(-6, 303)
         Me.BtnReportes.Name = "BtnReportes"
         Me.BtnReportes.Size = New System.Drawing.Size(148, 23)
         Me.BtnReportes.TabIndex = 5
@@ -234,7 +235,7 @@ Partial Class Ventas
         Me.BtnCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.BtnCliente.Image = CType(resources.GetObject("BtnCliente.Image"), System.Drawing.Image)
         Me.BtnCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnCliente.Location = New System.Drawing.Point(-5, 259)
+        Me.BtnCliente.Location = New System.Drawing.Point(-5, 203)
         Me.BtnCliente.Name = "BtnCliente"
         Me.BtnCliente.Size = New System.Drawing.Size(142, 23)
         Me.BtnCliente.TabIndex = 4
@@ -253,7 +254,7 @@ Partial Class Ventas
         Me.BtnUsuario.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.BtnUsuario.Image = CType(resources.GetObject("BtnUsuario.Image"), System.Drawing.Image)
         Me.BtnUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnUsuario.Location = New System.Drawing.Point(-5, 307)
+        Me.BtnUsuario.Location = New System.Drawing.Point(-5, 251)
         Me.BtnUsuario.Name = "BtnUsuario"
         Me.BtnUsuario.Size = New System.Drawing.Size(147, 23)
         Me.BtnUsuario.TabIndex = 3
@@ -272,7 +273,7 @@ Partial Class Ventas
         Me.btnInventario.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnInventario.Image = CType(resources.GetObject("btnInventario.Image"), System.Drawing.Image)
         Me.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnInventario.Location = New System.Drawing.Point(-8, 209)
+        Me.btnInventario.Location = New System.Drawing.Point(-8, 153)
         Me.btnInventario.Name = "btnInventario"
         Me.btnInventario.Size = New System.Drawing.Size(150, 32)
         Me.btnInventario.TabIndex = 2
