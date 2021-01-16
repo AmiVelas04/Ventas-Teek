@@ -37,6 +37,7 @@ Public Class CorteCaja
             ingresoope()
             Dim fecha As String = DateTime.Now.ToString("yyyy/MM/dd")
             totalcaja(fecha)
+            caj.sacarC()
         End If
 
 
@@ -50,7 +51,7 @@ Public Class CorteCaja
         Dim usu As String = VariablesUNI.Nombre
         Dim datos() As String = {monto, desc, operacion, "Activo", fecha, usu}
         If caj.ingresoope(datos) Then
-            MessageBox.Show("Ingreso de operacion correctamente")
+            MessageBox.Show("Ingreso de operación correctamente")
         Else
             MessageBox.Show("Error en el ingreso de operacion")
         End If
@@ -76,6 +77,11 @@ Public Class CorteCaja
         Dim datos As New DataTable
         datos = caj.operaciones(fecha)
         DgvOpera.DataSource = datos
+        totalcaja(fecha)
 
+    End Sub
+
+    Private Sub BtnSacarCaja_Click(sender As Object, e As EventArgs) Handles BtnSacarCaja.Click
+        caj.sacarC()
     End Sub
 End Class

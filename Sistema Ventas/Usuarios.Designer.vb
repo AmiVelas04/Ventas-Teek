@@ -101,7 +101,7 @@ Partial Class Usuarios
         Me.RdbAdmin.ForeColor = System.Drawing.Color.White
         Me.RdbAdmin.Location = New System.Drawing.Point(26, 357)
         Me.RdbAdmin.Name = "RdbAdmin"
-        Me.RdbAdmin.Size = New System.Drawing.Size(122, 20)
+        Me.RdbAdmin.Size = New System.Drawing.Size(123, 20)
         Me.RdbAdmin.TabIndex = 10
         Me.RdbAdmin.Text = "Administrador"
         Me.RdbAdmin.UseVisualStyleBackColor = True
@@ -113,7 +113,7 @@ Partial Class Usuarios
         Me.RdbVendedor.ForeColor = System.Drawing.Color.White
         Me.RdbVendedor.Location = New System.Drawing.Point(26, 383)
         Me.RdbVendedor.Name = "RdbVendedor"
-        Me.RdbVendedor.Size = New System.Drawing.Size(94, 20)
+        Me.RdbVendedor.Size = New System.Drawing.Size(95, 20)
         Me.RdbVendedor.TabIndex = 9
         Me.RdbVendedor.TabStop = True
         Me.RdbVendedor.Text = "Vendedor"
@@ -126,7 +126,7 @@ Partial Class Usuarios
         Me.Label5.Location = New System.Drawing.Point(23, 317)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(117, 16)
+        Me.Label5.Size = New System.Drawing.Size(119, 16)
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Tipo de usuario"
         '
@@ -146,7 +146,7 @@ Partial Class Usuarios
         Me.Label4.Location = New System.Drawing.Point(23, 248)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(142, 16)
+        Me.Label4.Size = New System.Drawing.Size(146, 16)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Contraseña(repetir)"
         '
@@ -166,7 +166,7 @@ Partial Class Usuarios
         Me.Label3.Location = New System.Drawing.Point(23, 178)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(87, 16)
+        Me.Label3.Size = New System.Drawing.Size(89, 16)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Contraseña"
         '
@@ -185,7 +185,7 @@ Partial Class Usuarios
         Me.Label2.Location = New System.Drawing.Point(23, 106)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(62, 16)
+        Me.Label2.Size = New System.Drawing.Size(63, 16)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Usuario"
         '
@@ -204,7 +204,7 @@ Partial Class Usuarios
         Me.Label1.Location = New System.Drawing.Point(23, 37)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(63, 16)
+        Me.Label1.Size = New System.Drawing.Size(64, 16)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nombre"
         '
@@ -261,12 +261,13 @@ Partial Class Usuarios
         Me.BtnEliminar.BackColor = System.Drawing.Color.Red
         Me.BtnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEliminar.Location = New System.Drawing.Point(82, 15)
+        Me.BtnEliminar.Location = New System.Drawing.Point(163, 14)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(75, 43)
         Me.BtnEliminar.TabIndex = 4
         Me.BtnEliminar.Text = "Borrar"
         Me.BtnEliminar.UseVisualStyleBackColor = False
+        Me.BtnEliminar.Visible = False
         '
         'BtnAgregar
         '
@@ -274,7 +275,7 @@ Partial Class Usuarios
         Me.BtnAgregar.BackColor = System.Drawing.Color.RoyalBlue
         Me.BtnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAgregar.Location = New System.Drawing.Point(163, 15)
+        Me.BtnAgregar.Location = New System.Drawing.Point(82, 14)
         Me.BtnAgregar.Name = "BtnAgregar"
         Me.BtnAgregar.Size = New System.Drawing.Size(75, 43)
         Me.BtnAgregar.TabIndex = 5
@@ -352,28 +353,28 @@ Partial Class Usuarios
         Me.Nombre.HeaderText = "Nombre"
         Me.Nombre.Name = "Nombre"
         Me.Nombre.ReadOnly = True
-        Me.Nombre.Width = 86
+        Me.Nombre.Width = 87
         '
         'Usuario
         '
         Me.Usuario.HeaderText = "Usuario"
         Me.Usuario.Name = "Usuario"
         Me.Usuario.ReadOnly = True
-        Me.Usuario.Width = 85
+        Me.Usuario.Width = 86
         '
         'Contraseña
         '
         Me.Contraseña.HeaderText = "Contraseña"
         Me.Contraseña.Name = "Contraseña"
         Me.Contraseña.ReadOnly = True
-        Me.Contraseña.Width = 110
+        Me.Contraseña.Width = 112
         '
         'Nivel
         '
         Me.Nivel.HeaderText = "Nivel"
         Me.Nivel.Name = "Nivel"
         Me.Nivel.ReadOnly = True
-        Me.Nivel.Width = 67
+        Me.Nivel.Width = 68
         '
         'Usuarios
         '

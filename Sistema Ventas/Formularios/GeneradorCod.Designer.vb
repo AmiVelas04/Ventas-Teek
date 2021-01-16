@@ -23,6 +23,7 @@ Partial Class GeneradorCod
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PanSup = New System.Windows.Forms.Panel()
+        Me.ChkEditar = New System.Windows.Forms.CheckBox()
         Me.PcbCod = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.NudEtiqueta = New System.Windows.Forms.NumericUpDown()
@@ -32,7 +33,6 @@ Partial Class GeneradorCod
         Me.BtnGen = New System.Windows.Forms.Button()
         Me.TxtCodBarras = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ChkEditar = New System.Windows.Forms.CheckBox()
         Me.PanSup.SuspendLayout()
         CType(Me.PcbCod, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NudEtiqueta, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,14 +54,24 @@ Partial Class GeneradorCod
         Me.PanSup.Location = New System.Drawing.Point(0, 0)
         Me.PanSup.Margin = New System.Windows.Forms.Padding(5)
         Me.PanSup.Name = "PanSup"
-        Me.PanSup.Size = New System.Drawing.Size(656, 237)
+        Me.PanSup.Size = New System.Drawing.Size(499, 151)
         Me.PanSup.TabIndex = 0
+        '
+        'ChkEditar
+        '
+        Me.ChkEditar.AutoSize = True
+        Me.ChkEditar.Location = New System.Drawing.Point(243, 74)
+        Me.ChkEditar.Name = "ChkEditar"
+        Me.ChkEditar.Size = New System.Drawing.Size(76, 24)
+        Me.ChkEditar.TabIndex = 9
+        Me.ChkEditar.Text = "Editar"
+        Me.ChkEditar.UseVisualStyleBackColor = True
         '
         'PcbCod
         '
-        Me.PcbCod.Location = New System.Drawing.Point(445, 180)
+        Me.PcbCod.Location = New System.Drawing.Point(292, 3)
         Me.PcbCod.Name = "PcbCod"
-        Me.PcbCod.Size = New System.Drawing.Size(77, 78)
+        Me.PcbCod.Size = New System.Drawing.Size(54, 46)
         Me.PcbCod.TabIndex = 8
         Me.PcbCod.TabStop = False
         Me.PcbCod.Visible = False
@@ -69,7 +79,7 @@ Partial Class GeneradorCod
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(57, 180)
+        Me.Label3.Location = New System.Drawing.Point(51, 86)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(186, 20)
         Me.Label3.TabIndex = 7
@@ -77,7 +87,7 @@ Partial Class GeneradorCod
         '
         'NudEtiqueta
         '
-        Me.NudEtiqueta.Location = New System.Drawing.Point(118, 203)
+        Me.NudEtiqueta.Location = New System.Drawing.Point(117, 109)
         Me.NudEtiqueta.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
         Me.NudEtiqueta.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NudEtiqueta.Name = "NudEtiqueta"
@@ -87,38 +97,40 @@ Partial Class GeneradorCod
         '
         'TxtTexto
         '
-        Me.TxtTexto.Location = New System.Drawing.Point(43, 131)
+        Me.TxtTexto.Location = New System.Drawing.Point(197, 109)
         Me.TxtTexto.Margin = New System.Windows.Forms.Padding(5)
         Me.TxtTexto.Name = "TxtTexto"
-        Me.TxtTexto.Size = New System.Drawing.Size(271, 26)
+        Me.TxtTexto.Size = New System.Drawing.Size(87, 26)
         Me.TxtTexto.TabIndex = 5
+        Me.TxtTexto.Visible = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(57, 106)
+        Me.Label2.Location = New System.Drawing.Point(38, 106)
         Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(53, 20)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Texto"
+        Me.Label2.Visible = False
         '
         'BtnImp
         '
-        Me.BtnImp.Location = New System.Drawing.Point(445, 106)
+        Me.BtnImp.Location = New System.Drawing.Point(343, 84)
         Me.BtnImp.Margin = New System.Windows.Forms.Padding(5)
         Me.BtnImp.Name = "BtnImp"
-        Me.BtnImp.Size = New System.Drawing.Size(172, 60)
+        Me.BtnImp.Size = New System.Drawing.Size(144, 60)
         Me.BtnImp.TabIndex = 3
         Me.BtnImp.Text = "Imprimir Codigo"
         Me.BtnImp.UseVisualStyleBackColor = True
         '
         'BtnGen
         '
-        Me.BtnGen.Location = New System.Drawing.Point(445, 32)
+        Me.BtnGen.Location = New System.Drawing.Point(343, 12)
         Me.BtnGen.Margin = New System.Windows.Forms.Padding(5)
         Me.BtnGen.Name = "BtnGen"
-        Me.BtnGen.Size = New System.Drawing.Size(172, 62)
+        Me.BtnGen.Size = New System.Drawing.Size(144, 62)
         Me.BtnGen.TabIndex = 2
         Me.BtnGen.Text = "Generar Codigo Nuevo"
         Me.BtnGen.UseVisualStyleBackColor = True
@@ -126,7 +138,7 @@ Partial Class GeneradorCod
         'TxtCodBarras
         '
         Me.TxtCodBarras.Enabled = False
-        Me.TxtCodBarras.Location = New System.Drawing.Point(43, 60)
+        Me.TxtCodBarras.Location = New System.Drawing.Point(13, 40)
         Me.TxtCodBarras.Margin = New System.Windows.Forms.Padding(5)
         Me.TxtCodBarras.Name = "TxtCodBarras"
         Me.TxtCodBarras.Size = New System.Drawing.Size(271, 26)
@@ -135,28 +147,18 @@ Partial Class GeneradorCod
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(57, 35)
+        Me.Label1.Location = New System.Drawing.Point(27, 15)
         Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(148, 20)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Codigo de Barras"
         '
-        'ChkEditar
-        '
-        Me.ChkEditar.AutoSize = True
-        Me.ChkEditar.Location = New System.Drawing.Point(322, 62)
-        Me.ChkEditar.Name = "ChkEditar"
-        Me.ChkEditar.Size = New System.Drawing.Size(76, 24)
-        Me.ChkEditar.TabIndex = 9
-        Me.ChkEditar.Text = "Editar"
-        Me.ChkEditar.UseVisualStyleBackColor = True
-        '
         'GeneradorCod
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(656, 237)
+        Me.ClientSize = New System.Drawing.Size(499, 151)
         Me.Controls.Add(Me.PanSup)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D

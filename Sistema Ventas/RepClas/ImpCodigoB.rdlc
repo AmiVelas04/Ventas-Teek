@@ -42,21 +42,24 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.82cm</Width>
+              <Width>4cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.85528cm</Width>
+              <Width>4cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.82cm</Width>
+              <Width>4cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.82cm</Width>
+              <Width>4cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>4cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>2.92558cm</Height>
+              <Height>3.58703cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -64,12 +67,12 @@
                       <TablixBody>
                         <TablixColumns>
                           <TablixColumn>
-                            <Width>4.82cm</Width>
+                            <Width>4cm</Width>
                           </TablixColumn>
                         </TablixColumns>
                         <TablixRows>
                           <TablixRow>
-                            <Height>2.92558cm</Height>
+                            <Height>3.58703cm</Height>
                             <TablixCells>
                               <TablixCell>
                                 <CellContents>
@@ -85,15 +88,18 @@
                                                 <Value>=Fields!Etiqueta1.Value</Value>
                                                 <Style>
                                                   <FontFamily>Gill Sans MT</FontFamily>
+                                                  <FontSize>8pt</FontSize>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox13</rd:DefaultName>
                                         <Height>0.6cm</Height>
-                                        <Width>4.82cm</Width>
+                                        <Width>3.8cm</Width>
                                         <Style>
                                           <Border>
                                             <Style>None</Style>
@@ -109,9 +115,9 @@
                                         <Value>="file:" &amp; Fields!Codigo1.Value</Value>
                                         <Sizing>FitProportional</Sizing>
                                         <Top>0.70583cm</Top>
-                                        <Left>0.1cm</Left>
+                                        <Left>0.5cm</Left>
                                         <Height>2cm</Height>
-                                        <Width>4.62cm</Width>
+                                        <Width>3cm</Width>
                                         <ZIndex>1</ZIndex>
                                         <Style>
                                           <Border>
@@ -159,12 +165,12 @@
                       <TablixBody>
                         <TablixColumns>
                           <TablixColumn>
-                            <Width>4.85528cm</Width>
+                            <Width>4cm</Width>
                           </TablixColumn>
                         </TablixColumns>
                         <TablixRows>
                           <TablixRow>
-                            <Height>2.92558cm</Height>
+                            <Height>3.58703cm</Height>
                             <TablixCells>
                               <TablixCell>
                                 <CellContents>
@@ -180,15 +186,18 @@
                                                 <Value>=Fields!Etiqueta2.Value</Value>
                                                 <Style>
                                                   <FontFamily>Gill Sans MT</FontFamily>
+                                                  <FontSize>8pt</FontSize>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox17</rd:DefaultName>
                                         <Height>0.6cm</Height>
-                                        <Width>4.82cm</Width>
+                                        <Width>3.8cm</Width>
                                         <Style>
                                           <Border>
                                             <Style>None</Style>
@@ -204,9 +213,9 @@
                                         <Value>="File:" &amp; Fields!Codigo2.Value</Value>
                                         <Sizing>FitProportional</Sizing>
                                         <Top>0.70583cm</Top>
-                                        <Left>0.1cm</Left>
+                                        <Left>0.5cm</Left>
                                         <Height>2cm</Height>
-                                        <Width>4.62cm</Width>
+                                        <Width>3cm</Width>
                                         <ZIndex>1</ZIndex>
                                         <Style>
                                           <Border>
@@ -254,12 +263,12 @@
                       <TablixBody>
                         <TablixColumns>
                           <TablixColumn>
-                            <Width>4.82cm</Width>
+                            <Width>4cm</Width>
                           </TablixColumn>
                         </TablixColumns>
                         <TablixRows>
                           <TablixRow>
-                            <Height>2.92558cm</Height>
+                            <Height>3.58703cm</Height>
                             <TablixCells>
                               <TablixCell>
                                 <CellContents>
@@ -275,15 +284,18 @@
                                                 <Value>=Fields!Etiqueta3.Value</Value>
                                                 <Style>
                                                   <FontFamily>Gill Sans MT</FontFamily>
+                                                  <FontSize>8pt</FontSize>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox18</rd:DefaultName>
                                         <Height>0.6cm</Height>
-                                        <Width>4.82cm</Width>
+                                        <Width>3.8cm</Width>
                                         <Style>
                                           <Border>
                                             <Style>None</Style>
@@ -299,9 +311,9 @@
                                         <Value>="File:" &amp; Fields!Codigo3.Value</Value>
                                         <Sizing>FitProportional</Sizing>
                                         <Top>0.70583cm</Top>
-                                        <Left>0.1cm</Left>
+                                        <Left>0.5cm</Left>
                                         <Height>2cm</Height>
-                                        <Width>4.62cm</Width>
+                                        <Width>3cm</Width>
                                         <ZIndex>1</ZIndex>
                                         <Style>
                                           <Border>
@@ -349,12 +361,12 @@
                       <TablixBody>
                         <TablixColumns>
                           <TablixColumn>
-                            <Width>4.82cm</Width>
+                            <Width>4cm</Width>
                           </TablixColumn>
                         </TablixColumns>
                         <TablixRows>
                           <TablixRow>
-                            <Height>2.92558cm</Height>
+                            <Height>3.58703cm</Height>
                             <TablixCells>
                               <TablixCell>
                                 <CellContents>
@@ -370,15 +382,18 @@
                                                 <Value>=Fields!Etiqueta4.Value</Value>
                                                 <Style>
                                                   <FontFamily>Gill Sans MT</FontFamily>
+                                                  <FontSize>8pt</FontSize>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox19</rd:DefaultName>
                                         <Height>0.6cm</Height>
-                                        <Width>4.82cm</Width>
+                                        <Width>3.8cm</Width>
                                         <Style>
                                           <Border>
                                             <Style>None</Style>
@@ -393,10 +408,10 @@
                                         <Source>External</Source>
                                         <Value>="file:" &amp; Fields!Codigo4.Value</Value>
                                         <Sizing>FitProportional</Sizing>
-                                        <Top>0.70583cm</Top>
-                                        <Left>0.1cm</Left>
+                                        <Top>0.7cm</Top>
+                                        <Left>0.5cm</Left>
                                         <Height>2cm</Height>
-                                        <Width>4.62cm</Width>
+                                        <Width>3cm</Width>
                                         <ZIndex>1</ZIndex>
                                         <Style>
                                           <Border>
@@ -430,6 +445,106 @@
                           </TablixMember>
                         </TablixMembers>
                       </TablixRowHierarchy>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </Tablix>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Tablix Name="Tablix7">
+                      <TablixBody>
+                        <TablixColumns>
+                          <TablixColumn>
+                            <Width>4cm</Width>
+                          </TablixColumn>
+                        </TablixColumns>
+                        <TablixRows>
+                          <TablixRow>
+                            <Height>3.58703cm</Height>
+                            <TablixCells>
+                              <TablixCell>
+                                <CellContents>
+                                  <Rectangle Name="Rectangle6">
+                                    <ReportItems>
+                                      <Textbox Name="Etiqueta5">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=Fields!Etiqueta5.Value</Value>
+                                                <Style>
+                                                  <FontFamily>Gill Sans MT</FontFamily>
+                                                  <FontSize>8pt</FontSize>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>Etiqueta5</rd:DefaultName>
+                                        <Left>0.1cm</Left>
+                                        <Height>0.6cm</Height>
+                                        <Width>3.8cm</Width>
+                                        <Style>
+                                          <Border>
+                                            <Style>None</Style>
+                                          </Border>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                        </Style>
+                                      </Textbox>
+                                      <Image Name="Image6">
+                                        <Source>External</Source>
+                                        <Value>="File:" &amp; Fields!Codigo5.Value</Value>
+                                        <Sizing>FitProportional</Sizing>
+                                        <Top>0.7cm</Top>
+                                        <Left>0.5cm</Left>
+                                        <Height>2cm</Height>
+                                        <Width>3cm</Width>
+                                        <ZIndex>1</ZIndex>
+                                        <Style>
+                                          <Border>
+                                            <Style>None</Style>
+                                          </Border>
+                                        </Style>
+                                      </Image>
+                                    </ReportItems>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Style>
+                                      <Border>
+                                        <Style>None</Style>
+                                      </Border>
+                                    </Style>
+                                  </Rectangle>
+                                </CellContents>
+                              </TablixCell>
+                            </TablixCells>
+                          </TablixRow>
+                        </TablixRows>
+                      </TablixBody>
+                      <TablixColumnHierarchy>
+                        <TablixMembers>
+                          <TablixMember />
+                        </TablixMembers>
+                      </TablixColumnHierarchy>
+                      <TablixRowHierarchy>
+                        <TablixMembers>
+                          <TablixMember>
+                            <Group Name="Detalles4" />
+                          </TablixMember>
+                        </TablixMembers>
+                      </TablixRowHierarchy>
+                      <DataSetName>DetEtiqueta</DataSetName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -486,6 +601,7 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixMember>
           </TablixMembers>
@@ -519,7 +635,7 @@
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
-                        <Style>Solid</Style>
+                        <Style>None</Style>
                       </Border>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
@@ -533,8 +649,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DetEtiqueta</DataSetName>
-        <Height>3.00496cm</Height>
-        <Width>19.56632cm</Width>
+        <Height>3.66641cm</Height>
+        <Width>20.25104cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -542,10 +658,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.36806in</Height>
+    <Height>1.44347in</Height>
     <Style />
   </Body>
-  <Width>20cm</Width>
+  <Width>20.25104cm</Width>
   <Page>
     <PageHeight>27.94cm</PageHeight>
     <PageWidth>21.59cm</PageWidth>
@@ -589,6 +705,10 @@
           <DataField>Codigo4</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="Codigo5">
+          <DataField>Codigo5</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Etiqueta1">
           <DataField>Etiqueta1</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -603,6 +723,10 @@
         </Field>
         <Field Name="Etiqueta4">
           <DataField>Etiqueta4</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Etiqueta5">
+          <DataField>Etiqueta5</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

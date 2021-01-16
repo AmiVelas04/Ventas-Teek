@@ -8,6 +8,8 @@
     Public Property Codigo3 As String
     Public Property Etiqueta4 As String
     Public Property Codigo4 As String
+    Public Property Etiqueta5 As String
+    Public Property Codigo5 As String
 
 
 

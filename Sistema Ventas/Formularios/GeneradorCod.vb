@@ -33,16 +33,16 @@ Public Class GeneradorCod
         Try
             Dim alto As Single = 40
             Dim bm As Bitmap = Nothing
+            mensaje = "Teek - Todo es tecnología"
             bm = codif.codigob(texto, True, alto, mensaje)
             ' Dim CodecInfo As ImageCodecInfo = GetEncoderInfo("image/jpeg")
             ' PcbCod.Image = bm
             PcbCod.BackgroundImage = bm
             Dim imagen As Image = PcbCod.BackgroundImage
 
-
-
-
-            imagen.Save("C:\Users\DevMax\Documents\eres.jpg")
+            'imagen.Save("C:\Users\Usuario 1\Pictures\C.jpg")
+            imagen.Save("D:\Pictures\C.jpg")
+            'imagen.Save("C:\Users\Amk\Pictures\C.jpg")
             Dim cantidadeti As Integer
             cantidadeti = NudEtiqueta.Value
             codif.imprimircod(mensaje, cantidadeti)

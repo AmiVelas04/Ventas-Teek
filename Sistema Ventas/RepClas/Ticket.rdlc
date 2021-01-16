@@ -530,7 +530,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Detalle</DataSetName>
-        <Top>6.24099cm</Top>
+        <Top>6.74454cm</Top>
         <Left>0.1cm</Left>
         <Height>1.8cm</Height>
         <Width>7.15cm</Width>
@@ -559,7 +559,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>8.54287cm</Top>
+        <Top>8.9662cm</Top>
         <Left>0.1cm</Left>
         <Height>0.6cm</Height>
         <Width>7.15cm</Width>
@@ -575,7 +575,7 @@
         </Style>
       </Textbox>
       <Line Name="Line1">
-        <Top>9.49537cm</Top>
+        <Top>10.13037cm</Top>
         <Left>0.1cm</Left>
         <Height>0cm</Height>
         <Width>7.15cm</Width>
@@ -586,8 +586,46 @@
           </Border>
         </Style>
       </Line>
+      <Textbox Name="Textbox6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Nit: </Value>
+                <Style>
+                  <FontFamily>Gill Sans MT</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!Nit.Value, "Encabezado")</Value>
+                <Style>
+                  <FontFamily>Gill Sans MT</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox6</rd:DefaultName>
+        <Top>5.96815cm</Top>
+        <Left>0.1cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>3.89122in</Height>
+    <Height>4.2175in</Height>
     <Style />
   </Body>
   <Width>7.52933cm</Width>

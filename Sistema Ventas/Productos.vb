@@ -225,6 +225,7 @@
         cliente = principal.buscli(codicli, TxtNit.Text, CboCliente.Text)
 
         datos = {cliente.Rows(0)(0), cliente.Rows(0)(1), cliente.Rows(0)(2), cliente.Rows(0)(3), cliente.Rows(0)(4), TxtNit.Text, Total}
+
         prod.Columns.Add("codigo").DataType = System.Type.GetType("System.String")
         prod.Columns.Add("producto").DataType = System.Type.GetType("System.String")
         prod.Columns.Add("descripcion").DataType = System.Type.GetType("System.String")
@@ -233,14 +234,16 @@
         prod.Columns.Add("cantidad").DataType = System.Type.GetType("System.String")
         For k = 0 To filas - 1
             Dim fila = prod.NewRow
-            fila("codigo") = DGV1.Rows(k).Cells(0).Value
+            fila("codigo") = DGV1.Rows(k).Cells(0).Value.ToString
             fila("producto") = DGV1.Rows(k).Cells(1).Value
             fila("descripcion") = DGV1.Rows(k).Cells(2).Value
             fila("marca") = DGV1.Rows(k).Cells(3).Value
             fila("precio") = DGV1.Rows(k).Cells(4).Value
             fila("cantidad") = DGV1.Rows(k).Cells(5).Value
             prod.Rows.Add(fila)
+
         Next
+
         Dim tipo As String
         ' If LblNombre.Text = "Nombre: N/E" Or LblNombre.Text = "Nombre:" Then
         'MessageBox.Show("No se puede realizar la compra debido a que no exite ningun cliente valido", "No hay cliente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)

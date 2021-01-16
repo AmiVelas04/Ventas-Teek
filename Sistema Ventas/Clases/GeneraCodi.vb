@@ -50,9 +50,10 @@ Public Class GeneraCodi
         End If
         barcode.Code = codigo
         barcode.ChecksumText = True
-        barcode.CodeType = Barcode128.CODE128
+        barcode.CodeType = BarcodeEANSUPP.UPCA
+
         Try
-            Dim letras As String
+        Dim letras As String
             letras = codigo & Chr(13) & texto
             Dim talla As New Size
             talla.Width = 200
@@ -89,18 +90,18 @@ Public Class GeneraCodi
     Public Sub imprimircod(ByVal texto As String, ByVal cant As Integer)
         Dim enca As New EncProd
         Dim cantfil As Integer, ultcol As Integer
-        cantfil = (cant - (cant Mod 4)) / 4
-        If (cant Mod 4) > 0 Then
+        cantfil = (cant - (cant Mod 5)) / 5
+        If (cant Mod 5) > 0 Then
             cantfil += 1
-            ultcol = cant Mod 4
+            ultcol = cant Mod 5
         Else
-            ultcol = 4
+            ultcol = 5
         End If
         Dim fila As Integer, columna As Integer
-        Dim titulo(cantfil, 4) As String
-        Dim imgcod(cantfil, 4) As String
+        Dim titulo(cantfil, 5) As String
+        Dim imgcod(cantfil, 5) As String
         For fila = 0 To (cantfil - 1)
-            For columna = 0 To 3
+            For columna = 0 To 4
                 titulo(fila, columna) = ""
                 imgcod(fila, columna) = ""
             Next
@@ -110,12 +111,17 @@ Public Class GeneraCodi
             If fila = (cantfil - 1) Then
                 For columna = 0 To (ultcol - 1)
                     titulo(fila, columna) = texto
-                    imgcod(fila, columna) = "C:\Users\DevMax\Documents\eres.jpg"
+                    imgcod(fila, columna) = "D:\Pictures\C.jpg"
+                    'imgcod(fila, columna) = "C:\Users\Usuario 1\Pictures\C.jpg"
+                    'imgcod(fila, columna) = "C:\Users\Amk\Pictures\C.jpg"
+
                 Next
             Else
-                For columna = 0 To 3
+                For columna = 0 To 4
                     titulo(fila, columna) = texto
-                    imgcod(fila, columna) = "C:\Users\DevMax\Documents\eres.jpg"
+                    imgcod(fila, columna) = "D:\Pictures\C.jpg"
+                    'imgcod(fila, columna) = "C:\Users\Usuario 1\Pictures\C.jpg"
+                    'imgcod(fila, columna) = "C:\Users\Amk\Pictures\C.jpg"
                 Next
             End If
         Next
@@ -130,7 +136,10 @@ Public Class GeneraCodi
             etiq.Codigo3 = imgcod(fila, 2)
             etiq.Etiqueta4 = titulo(fila, 3)
             etiq.Codigo4 = imgcod(fila, 3)
+            etiq.Etiqueta5 = titulo(fila, 4)
+            etiq.Codigo5 = imgcod(fila, 4)
             enca.Etiqueta.Add(etiq)
+
 
         Next
         Dim ventana As New ImpCodigoB

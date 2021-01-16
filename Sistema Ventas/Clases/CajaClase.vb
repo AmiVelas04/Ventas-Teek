@@ -1,6 +1,10 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.Drawing.Printing
 Public Class CajaClase
     Dim conec As New Conexion
+    Dim TextoImprimir As String
+
+#Region "General"
     Private Sub buscar(ByVal consulta As String, ByRef datos As DataTable)
         conec.iniciar()
         datos.Dispose()
@@ -12,9 +16,6 @@ Public Class CajaClase
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
-
-
-
 
     End Sub
     Private Function consultag(ByVal consulta As String) As Boolean
@@ -34,6 +35,7 @@ Public Class CajaClase
             Return False
         End Try
     End Function
+#End Region
     Private Sub iniciarlo()
 
         Dim consulta As String
@@ -61,9 +63,17 @@ Public Class CajaClase
         End If
 
     End Sub
-    Private Sub cortecaja()
+    Public Sub sacarC()
+        Dim comandos As String
+        comandos = Chr(16) + Chr(20) + Chr(1) + Chr(0) + Chr(1)
+        'comandos = Chr(27) + Chr(7) + Chr(10) + Chr(50) + Chr(7)
+        ' comandos = Chr(27) + Chr(120) + Chr(1)
 
+
+        'comandos = ""
+        SacarCajon(comandos)
     End Sub
+
 
     Private Function idcaja() As Integer
         Dim consulta As String
@@ -71,7 +81,7 @@ Public Class CajaClase
         Dim codigo As Integer
         consulta = "Select max(id_caja) from caja"
         buscar(consulta, datos)
-        If datos.Rows.Count = 0 Then
+        If (IsDBNull(datos.Rows(0)(0))) Then
             Return 1
         Else
             codigo = Integer.Parse(datos.Rows(0)(0).ToString)
@@ -152,4 +162,41 @@ Public Class CajaClase
         buscar(consulta, datos)
         Return datos
     End Function
+
+    Private Sub SacarCajon(ByVal text As String)
+        TextoImprimir = text
+        Dim prn As New Printing.PrintDocument
+        Using (prn)
+            prn.PrinterSettings.PrinterName _
+               = ImpresoraPred()
+            AddHandler prn.PrintPage,
+               AddressOf Me.PrintPageHandler
+            prn.Print()
+            RemoveHandler prn.PrintPage,
+               AddressOf Me.PrintPageHandler
+        End Using
+    End Sub
+    Private Sub PrintPageHandler(ByVal sender As Object,
+       ByVal args As Printing.PrintPageEventArgs)
+        Dim myFont As New Font("Microsoft San Serif", 10)
+        args.Graphics.DrawString(TextoImprimir,
+           New Font(myFont, FontStyle.Regular),
+           Brushes.Black, 10, 10)
+    End Sub
+
+    Private Function ImpresoraPred() As String
+
+        For i As Integer = 0 To (PrinterSettings.InstalledPrinters.Count - 1)
+
+            Dim a As New PrinterSettings()
+            a.PrinterName = PrinterSettings.InstalledPrinters(i).ToString
+            If (a.IsDefaultPrinter) Then
+                Return PrinterSettings.InstalledPrinters(i).ToString
+            End If
+        Next
+        Return ""
+
+    End Function
+
+
 End Class

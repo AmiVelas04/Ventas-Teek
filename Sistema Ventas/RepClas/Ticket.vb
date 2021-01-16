@@ -87,7 +87,7 @@ Public Class Ticket
             Throw New Exception(String.Format("No se puede encontrar la impresora", printname))
         Else
 
-            '  printdoc.PrintPage += New PrintPageEventHandler(printpage);
+            'printdoc.PrintPage += New PrintPageEventHandler(printpage);
             m_currentPageIndex = 0
 
             printdoc.Print()

@@ -39,7 +39,7 @@ Public Class Usuario
         Dim datos As New DataTable
         Dim consulta As String
         consulta = "select * from usuario where cod_usu=" & cod
-
+        cone.iniciar()
         Dim adap As New MySqlDataAdapter(consulta, cone.conn)
         adap.Fill(datos)
         If datos.Rows.Count >= 1 Then
@@ -57,7 +57,7 @@ Public Class Usuario
         Dim consulta As String
         Dim comando As New MySqlCommand
         consulta = "update usuario set nombre='" & datos(1) & "', usuario='" & datos(2) & "', contrasena='" & datos(3) & "', nivel=" & datos(4) & " where cod_usu=" & datos(0)
-
+        cone.iniciar()
         comando.Connection = cone.conn
         comando.CommandText = consulta
         comando.CommandType = CommandType.Text
@@ -97,7 +97,7 @@ Public Class Usuario
         Dim total As Integer
         total = cod.Rows.Count
         codigo = total + 1
-
+        cone.iniciar()
         consulta = "insert into usuario (cod_usu, nombre, usuario, contrasena,nivel) values (" & codigo & ",'" & datos(1) & "','" & datos(2) & "','" & datos(3) & "'," & datos(4) & ")"
         comando.Connection = cone.conn
         comando.CommandText = consulta
@@ -129,6 +129,7 @@ Public Class Usuario
         Dim consulta As String
         Dim comando As New MySqlCommand
         consulta = "delete from usuario where cod_usu=" & cod
+        cone.iniciar()
         comando.Connection = cone.conn
         comando.CommandText = consulta
         comando.CommandType = CommandType.Text

@@ -1,12 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class BuscProd
-    Dim servidor As String = "localhost"
-    Dim bd As String = "prod"
-    Dim user As String = "creditos"
-    Dim pass As String = "Cre-Sis-2020"
-    Dim cadenaconn As String = "server=" & servidor & ";" & "database=" & bd & ";" & "user id=" & user & ";" & "password=" & pass
-    Dim conn As New MySqlConnection(cadenaconn)
+    Dim conec As New Conexion
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
 
@@ -23,7 +18,8 @@ Public Class BuscProd
         Dim consulta As String
         consulta = "select codigo_p as Codigo,Nombre,Descripcion,Marca, Preciov as Precio from producto where nombre like '%" & nombre & "%'"
         Try
-            Dim adap As New MySqlDataAdapter(consulta, conn)
+            conec.iniciar()
+            Dim adap As New MySqlDataAdapter(consulta, conec.conn)
             adap.Fill(prod)
             Dgv1.DataSource = prod
             ' Dgv1.Columns(0).Visible = False

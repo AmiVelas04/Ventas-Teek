@@ -42,7 +42,7 @@ Public Class principal
     'busca el cliente y devuele los datos en un datatable
     Friend Function buscli(ByVal cod As String, ByVal nit As String, ByVal nomcli As String)
 
-        If (existecli(nit)) Then
+        If (existecli(cod)) Then
             Dim datos As New DataTable
             Dim consulta As String
             consulta = "Select cod_cli,nombre, direccion, credito, saldo from cliente where cod_cli='" & cod & "'"
@@ -89,6 +89,7 @@ Public Class principal
 
     'Determina si existe el cliente
     Friend Function existecli(ByVal nit As String) As Boolean
+        conec.iniciar()
         Dim datos As New DataTable
         Dim consulta As String
         consulta = "select * from cliente where cod_cli='" & nit & "'"
@@ -416,6 +417,7 @@ Public Class principal
 
     'Registra una nueva venta
     Private Function ingresoventa(ByVal consulta As String) As Boolean
+        conec.iniciar()
         Dim comando As New MySqlCommand
         comando.Connection = conec.conn
         comando.CommandText = consulta
@@ -462,7 +464,7 @@ Public Class principal
             consulta = "insert into ventadetalle(cod_detalle,codigo_p,comprobante,precio,cantidad) values(" & codigo & ",'" & prod.Rows(i)(0) & "'," & codvent & "," & prod.Rows(i)(4) & "," & prod.Rows(i)(5) & ")"
 
             codigo += 1
-
+            conec.iniciar()
             comando.Connection = conec.conn
             comando.CommandText = consulta
             comando.CommandType = CommandType.Text

@@ -18,7 +18,7 @@
         datos = general.buscarusu(nom)
         total = datos.Rows.Count
         If total = 0 Then
-            MessageBox.Show("No se encontraron usarios ingresados", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("No se encontraron usuarios ingresados", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
         End If
         Dim i As Integer
@@ -100,7 +100,7 @@
         End If
     End Sub
 
-    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs)
+    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
         accion = 1
         GroupUsuario.Enabled = True
         TxtNombre.Clear()
@@ -112,7 +112,7 @@
 
     Private Sub DGVUsuarios_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs)
         If e.ColumnIndex = 3 Then
-            e.Value = New String("*"c, Convert.ToString(e.Value).Length)
+            e.Value = New String("*", Convert.ToString(e.Value).Length)
         End If
     End Sub
 
