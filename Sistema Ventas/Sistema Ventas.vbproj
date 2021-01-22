@@ -154,6 +154,12 @@
     <Compile Include="BuscProd.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Clases\Blanco.Designer.vb">
+      <DependentUpon>Blanco.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\Blanco.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Clases\CajaClase.vb" />
     <Compile Include="Clases\Clasecliente.vb" />
     <Compile Include="Clases\Conexion.vb" />
@@ -339,6 +345,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BuscProd.resx">
       <DependentUpon>BuscProd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clases\Blanco.rdlc" />
+    <EmbeddedResource Include="Clases\Blanco.resx">
+      <DependentUpon>Blanco.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cliente.resx">
       <DependentUpon>cliente.vb</DependentUpon>

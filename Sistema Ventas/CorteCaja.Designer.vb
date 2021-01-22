@@ -24,6 +24,7 @@ Partial Class CorteCaja
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CorteCaja))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BtnSacarCaja = New System.Windows.Forms.Button()
         Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.TxtTotal = New System.Windows.Forms.TextBox()
@@ -41,7 +42,6 @@ Partial Class CorteCaja
         Me.DtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.DgvOpera = New System.Windows.Forms.DataGridView()
-        Me.BtnSacarCaja = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DgvOpera, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,6 +72,25 @@ Partial Class CorteCaja
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(886, 271)
         Me.Panel1.TabIndex = 0
+        '
+        'BtnSacarCaja
+        '
+        Me.BtnSacarCaja.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.BtnSacarCaja.FlatAppearance.BorderSize = 0
+        Me.BtnSacarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSacarCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSacarCaja.ForeColor = System.Drawing.Color.White
+        Me.BtnSacarCaja.Image = CType(resources.GetObject("BtnSacarCaja.Image"), System.Drawing.Image)
+        Me.BtnSacarCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnSacarCaja.Location = New System.Drawing.Point(715, 170)
+        Me.BtnSacarCaja.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnSacarCaja.Name = "BtnSacarCaja"
+        Me.BtnSacarCaja.Size = New System.Drawing.Size(143, 50)
+        Me.BtnSacarCaja.TabIndex = 15
+        Me.BtnSacarCaja.Text = "Abrir"
+        Me.BtnSacarCaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnSacarCaja.UseVisualStyleBackColor = False
+        Me.BtnSacarCaja.Visible = False
         '
         'BtnBuscar
         '
@@ -274,24 +293,6 @@ Partial Class CorteCaja
         Me.DgvOpera.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvOpera.Size = New System.Drawing.Size(886, 457)
         Me.DgvOpera.TabIndex = 0
-        '
-        'BtnSacarCaja
-        '
-        Me.BtnSacarCaja.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.BtnSacarCaja.FlatAppearance.BorderSize = 0
-        Me.BtnSacarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnSacarCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSacarCaja.ForeColor = System.Drawing.Color.White
-        Me.BtnSacarCaja.Image = CType(resources.GetObject("BtnSacarCaja.Image"), System.Drawing.Image)
-        Me.BtnSacarCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnSacarCaja.Location = New System.Drawing.Point(715, 170)
-        Me.BtnSacarCaja.Margin = New System.Windows.Forms.Padding(4)
-        Me.BtnSacarCaja.Name = "BtnSacarCaja"
-        Me.BtnSacarCaja.Size = New System.Drawing.Size(143, 50)
-        Me.BtnSacarCaja.TabIndex = 15
-        Me.BtnSacarCaja.Text = "Abrir"
-        Me.BtnSacarCaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnSacarCaja.UseVisualStyleBackColor = False
         '
         'CorteCaja
         '

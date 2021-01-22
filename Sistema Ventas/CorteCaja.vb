@@ -83,5 +83,7 @@ Public Class CorteCaja
 
     Private Sub BtnSacarCaja_Click(sender As Object, e As EventArgs) Handles BtnSacarCaja.Click
         caj.sacarC()
+        'Dim blan As New Blanco
+        'blan.Show()
     End Sub
 End Class
