@@ -53,13 +53,13 @@
               <Width>3.10854cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.1825cm</Width>
+              <Width>2.63229cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.89146cm</Width>
+              <Width>2.26188cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.02375cm</Width>
+              <Width>1.67979cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.67979cm</Width>
@@ -739,7 +739,6 @@
                         <rd:FormatSymbolCulture>es-GT</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -838,7 +837,7 @@
         <Top>3.14537cm</Top>
         <Left>0.07683cm</Left>
         <Height>3.40938cm</Height>
-        <Width>18.83646cm</Width>
+        <Width>19.31271cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
