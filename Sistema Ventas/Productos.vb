@@ -40,7 +40,7 @@
         End If
     End Sub
 
-    Private Sub BtnBorrar_Click(sender As Object, e As EventArgs) Handles BtnBorrar.Click
+    Private Sub BtnBorrar_Click(sender As Object, e As EventArgs)
         Dim indice As Integer
 
         Try
@@ -75,6 +75,7 @@
             DGV1.Rows(k).Cells(6).Value = totalp
             total += totalp
         Next
+        LblT.Text = total
         LblTotal.Text = "Q. " & total
 
     End Sub
@@ -201,7 +202,7 @@
         End If
     End Sub
 
-    Private Sub BtnCobrar_Click(sender As Object, e As EventArgs) Handles BtnCobrar.Click
+    Private Sub BtnCobrar_Click(sender As Object, e As EventArgs)
         If LblTotal.Text = "Total:Q." Then
             MessageBox.Show("No se ha ingresado ningun producto", "No hay productos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -249,24 +250,24 @@
         'MessageBox.Show("No se puede realizar la compra debido a que no exite ningun cliente valido", "No hay cliente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         'Else
         If RdbContado.Checked = True Then
-                Try
-                    tipo = "Contado"
-                    principal.fact_gen(datos, prod, usuc, usun, tipo, 0, Total)
-                Catch ex As Exception
-                    MessageBox.Show("Error en detalle: " & ex.ToString)
-                End Try
+            Try
+                tipo = "Contado"
+                principal.fact_gen(datos, prod, usuc, usun, tipo, 0, Total)
+            Catch ex As Exception
+                MessageBox.Show("Error en detalle: " & ex.ToString)
+            End Try
+        Else
+            tipo = "Credito"
+            Dim saldo = cliente.Rows(0)(3) - cliente.Rows(0)(4)
+            If Total > saldo Then
+                MessageBox.Show("El monto excede el credito del cliente, cominicquese con su administrador", "Monto Exedido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Else
-                tipo = "Credito"
-                Dim saldo = cliente.Rows(0)(3) - cliente.Rows(0)(4)
-                If Total > saldo Then
-                    MessageBox.Show("El monto excede el credito del cliente, cominicquese con su administrador", "Monto Exedido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                Else
-                    Dim anti As Decimal
-                    anti = TxtAntic.Text
-                    principal.fact_gen(datos, prod, usuc, usun, tipo, anti, Total)
+                Dim anti As Decimal
+                anti = TxtAntic.Text
+                principal.fact_gen(datos, prod, usuc, usun, tipo, anti, Total)
 
-                End If
             End If
+        End If
         ' End If
         limpiar()
     End Sub
@@ -312,13 +313,13 @@
     End Sub
 
     Private Sub RdbContado_CheckedChanged(sender As Object, e As EventArgs)
-        LblAntic.Visible = False
+        LblEfect.Visible = False
         TxtAntic.Visible = False
         TxtAntic.Clear()
     End Sub
 
     Private Sub RdbCredito_CheckedChanged(sender As Object, e As EventArgs)
-        LblAntic.Visible = True
+        LblEfect.Visible = True
         TxtAntic.Visible = True
         TxtAntic.Text = 0
 
@@ -332,9 +333,19 @@
         End If
     End Sub
 
-    Private Sub TxtAntic_KeyDown(sender As Object, e As KeyEventArgs)
+    Private Sub TxtAntic_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtAntic.KeyDown
         If e.KeyCode = Keys.Escape Then
             TxtAntic.Clear()
+        ElseIf e.KeyCode = Keys.Return Then
+            If RdbContado.Checked And IsNumeric(TxtAntic.Text) And IsNumeric(LblT.Text) Then
+                Dim cambio As Decimal
+                cambio = Decimal.Parse(TxtAntic.Text) - Decimal.Parse(LblT.Text)
+                If cambio < 0 Then
+                    MessageBox.Show("Verifique el monto ingresado")
+                Else
+                    LblCambio.Text = "Cambio: Q. " & cambio
+                End If
+            End If
         End If
     End Sub
 
@@ -355,11 +366,11 @@
         LblCredito.Text = "Credito:"
         RdbContado.Checked = True
         RdbCredito.Enabled = True
-        LblAntic.Visible = False
+        LblEfect.Visible = False
         TxtAntic.Visible = False
     End Sub
 
-    Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click
+    Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs)
         limpiar()
 
     End Sub
@@ -386,4 +397,6 @@
     Private Sub BtnBuscarCli_Click_1(sender As Object, e As EventArgs) Handles BtnBuscarCli.Click
 
     End Sub
+
+
 End Class

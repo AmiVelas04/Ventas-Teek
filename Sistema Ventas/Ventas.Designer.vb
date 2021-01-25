@@ -58,7 +58,7 @@ Partial Class Ventas
         Me.Panelsup.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panelsup.Location = New System.Drawing.Point(0, 0)
         Me.Panelsup.Name = "Panelsup"
-        Me.Panelsup.Size = New System.Drawing.Size(1024, 40)
+        Me.Panelsup.Size = New System.Drawing.Size(1920, 40)
         Me.Panelsup.TabIndex = 17
         '
         'BtnMin
@@ -66,7 +66,7 @@ Partial Class Ventas
         Me.BtnMin.FlatAppearance.BorderSize = 0
         Me.BtnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnMin.Image = CType(resources.GetObject("BtnMin.Image"), System.Drawing.Image)
-        Me.BtnMin.Location = New System.Drawing.Point(936, 0)
+        Me.BtnMin.Location = New System.Drawing.Point(1832, 0)
         Me.BtnMin.Name = "BtnMin"
         Me.BtnMin.Size = New System.Drawing.Size(41, 40)
         Me.BtnMin.TabIndex = 3
@@ -110,7 +110,7 @@ Partial Class Ventas
         Me.BtnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BtnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCerrar.Location = New System.Drawing.Point(983, 0)
+        Me.BtnCerrar.Location = New System.Drawing.Point(1879, 0)
         Me.BtnCerrar.Name = "BtnCerrar"
         Me.BtnCerrar.Size = New System.Drawing.Size(41, 40)
         Me.BtnCerrar.TabIndex = 0
@@ -132,7 +132,7 @@ Partial Class Ventas
         Me.panelLat.Dock = System.Windows.Forms.DockStyle.Left
         Me.panelLat.Location = New System.Drawing.Point(0, 40)
         Me.panelLat.Name = "panelLat"
-        Me.panelLat.Size = New System.Drawing.Size(138, 728)
+        Me.panelLat.Size = New System.Drawing.Size(138, 960)
         Me.panelLat.TabIndex = 18
         '
         'BtnCod
@@ -328,14 +328,14 @@ Partial Class Ventas
         Me.PanelCentral.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelCentral.Location = New System.Drawing.Point(138, 40)
         Me.PanelCentral.Name = "PanelCentral"
-        Me.PanelCentral.Size = New System.Drawing.Size(886, 728)
+        Me.PanelCentral.Size = New System.Drawing.Size(1782, 960)
         Me.PanelCentral.TabIndex = 19
         '
         'Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1024, 768)
+        Me.ClientSize = New System.Drawing.Size(1920, 1000)
         Me.Controls.Add(Me.PanelCentral)
         Me.Controls.Add(Me.panelLat)
         Me.Controls.Add(Me.Panelsup)

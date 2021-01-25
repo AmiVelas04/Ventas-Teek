@@ -1,17 +1,8 @@
 ﻿
 Public Class cliente
     Dim funcion As New principal
-    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click 
-        If DgvCli.RowCount >= 1 Then
-            DgvCli.Rows.RemoveAt(0)
-        End If
-        Dim nom As String = TxtNom.Text
-        Dim datos As New DataTable
-        Dim total As Integer
-        datos = funcion.buscarcli2(nom)
-        total = datos.Rows.Count - 1
-
-        DgvCli.DataSource = datos
+    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
+        busquedagen()
     End Sub
 
     Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click 
@@ -105,6 +96,23 @@ Public Class cliente
     End Sub
 
     Private Sub cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+    Private Sub busquedagen()
+        If DgvCli.RowCount >= 1 Then
+            DgvCli.Rows.RemoveAt(0)
+        End If
+        Dim nom As String = TxtNom.Text
+        Dim datos As New DataTable
+        Dim total As Integer
+        datos = funcion.buscarcli2(nom)
+        total = datos.Rows.Count - 1
+
+        DgvCli.DataSource = datos
+    End Sub
+
+    Private Sub TxtNom_TextChanged(sender As Object, e As EventArgs) Handles TxtNom.TextChanged
+        busquedagen()
 
     End Sub
 End Class

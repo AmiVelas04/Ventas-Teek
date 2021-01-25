@@ -1,14 +1,14 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Conexion
-    Dim servidor As String = "192.168.0.102"
+    Dim servidor As String = "Localhost"
     'op del servidor 
     Dim bd As String = "VentasTeek"
     'base de datos: ventasteek
-    Dim user As String = "Teek"
-    'Dim user As String = "root"
+    'Dim user As String = "Teek"
+    Dim user As String = "root"
     'user nuevo: Teek
-    Dim pass As String = "Ventas_Teek_Sis"
-    ' Dim pass As String = "Ami_1532"
+    'Dim pass As String = "Ventas_Teek_Sis"
+    Dim pass As String = "Ami_1532"
     'contraseña nueva: Sis_Venta_19
     Dim cadenaconn As String = "server=" & servidor & ";" & "database=" & bd & ";" & "user id=" & user & ";" & "password=" & pass & "; SslMode=none"
     Public conn As New MySqlConnection()

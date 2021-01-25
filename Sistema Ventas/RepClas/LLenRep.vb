@@ -270,7 +270,7 @@ Public Class LLenRep
         Dim datos As New DataTable
         Dim datost As New DataTable
         Dim total As Decimal
-        consulta = "Select Nombre, Marca, cantidad, precioc,imagen, descripcion from producto order by Nombre,Marca"
+        consulta = "Select Nombre, Marca, cantidad, precioc,imagen, descripcion, preciov from producto order by Nombre,Marca"
         consultat = "select Sum(cantidad*precioc) as Total from producto"
         buscar(consulta, datos)
         buscar(consultat, datost)
@@ -297,6 +297,7 @@ Public Class LLenRep
                 detalle.Cantidad = dat(cont)(2)
                 detalle.Precio = dat(cont)(3)
                 detalle.imagen = Application.StartupPath & "\imagen\" & dat(cont)(4)
+                detalle.PrecioV = dat(cont)(6)
                 'MessageBox.Show(Application.StartupPath & "\imagen\" & dat(cont)(4))
                 Encabezado.Detalle.Add(detalle)
             Next

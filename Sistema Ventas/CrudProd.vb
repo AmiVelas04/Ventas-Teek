@@ -4,16 +4,7 @@
 
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        If DGVprod.RowCount >= 1 Then
-            DGVprod.Rows.RemoveAt(0)
-        End If
-        Dim nom As String = TxtNombre.Text
-        Dim datos As New DataTable
-        Dim total As Integer
-        datos = este.buscarpt(nom)
-        total = datos.Rows.Count - 1
-
-        DGVprod.DataSource = datos
+        Busquedagen()
 
     End Sub
 
@@ -188,5 +179,22 @@
                 TxtGan.Text = Decimal.Parse(TxtPrecioV.Text) - Decimal.Parse(TxtPrecioc.Text)
             End If
         End If
+    End Sub
+
+    Private Sub Busquedagen()
+        If DGVprod.RowCount >= 1 Then
+            DGVprod.Rows.RemoveAt(0)
+        End If
+        Dim nom As String = TxtNombre.Text
+        Dim datos As New DataTable
+        Dim total As Integer
+        datos = este.buscarpt(nom)
+        total = datos.Rows.Count - 1
+
+        DGVprod.DataSource = datos
+    End Sub
+
+    Private Sub TxtNombre_TextChanged(sender As Object, e As EventArgs) Handles TxtNombre.TextChanged
+        Busquedagen()
     End Sub
 End Class

@@ -46,4 +46,9 @@ Public Class BuscProd
     Private Sub BuscProd_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub TxtNom_TextChanged(sender As Object, e As EventArgs) Handles TxtNom.TextChanged
+        buscar()
+
+    End Sub
 End Class
